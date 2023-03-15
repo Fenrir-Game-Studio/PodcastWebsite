@@ -2,7 +2,7 @@
   "name": "podcast-website",
   "version": "0.0.0",
   "scripts": {
-    "deploy": "ng deploy --no-silent --base-href=/Fenrir-Game-Studio/PodcastWebsite/",
+    "deploy": "ng deploy --no-silent https://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@github.com/Fenrir-Game-Studio/PodcastWebsite/",
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
