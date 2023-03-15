@@ -22,12 +22,6 @@ jobs:
       - name: Upgrade NPM
         run: npm install -g npm
 
-      - name: Install angular cli
-        run: npm install -g @angular/cli
-
-      - name: Install angular-cli for gh pages
-        run: ng add angular-cli-ghpages --skip-confirmation
-
       - name: Cache node modules
         id: cache-nodemodules
         uses: actions/cache@v2
