@@ -4,7 +4,7 @@ on:
     branches: [ "main" ]
 
 jobs:
-  ci:
+  build-and-deploy:
     runs-on: ubuntu-latest
 
     strategy:
@@ -64,5 +64,7 @@ jobs:
           body: ${{ steps.changelog.outputs.clean_changelog }}
 
       - name: Deploy
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           npm run deploy
