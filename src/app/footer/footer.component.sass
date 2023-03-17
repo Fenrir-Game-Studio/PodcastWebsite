@@ -1,12 +1,35 @@
+@import 'src/assets/sass/variables'
 article
-    display: flex
+    display: grid
+    grid-template-columns: repeat(4, 1fr)
+    grid-gap: 16px
+    background: $podcast-black
 
 section
+    margin: auto
+    p, header, fa-icon
+        color: $podcast-white
+        font-family: 'Montserrat', sans-serif
     img
         max-width: 200px
+        margin: 0 auto
+        display: block
     li
         list-style-type: none
         display: inline
     header
         font-size: 1.5em
         font-weight: bold
+    &:nth-child(1)
+        p
+            text-align: center
+    &:nth-child(2)   
+        span
+            margin-right: 40px
+        fa-icon
+            margin-right: 6.5px
+    &:nth-child(4)
+        ul
+            padding-inline-start: 0px
+        a
+            margin-right: 10.5px
