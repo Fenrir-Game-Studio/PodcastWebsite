@@ -1,16 +1,11 @@
 @import 'src/assets/sass/variables'
 article
-    height: 1024px
     width: auto
-#hero-section
-    background-image: url('/assets/image/Background_H.png')
-    background-size: cover
 section 
     font-family: 'Montserrat', sans-serif
     header
         font-size: 2em
         font-weight: bold
-        color: $podcast-white
     div
         color: $podcast-white
     &:nth-child(3)
@@ -48,4 +43,74 @@ section
     
             100% 
                 transform: translateY(0px)
+#hero-section
+    height: 900px
+    background-image: url('/assets/image/Background_Hs2.png')
+    background-size: fill
+    background-repeat: no-repeat
+
+    #call-to-action
+        position: absolute
+        left: 50%
+        bottom: 0
+        transform: translateX(-50%)
+
+#latest-content, #about
+    height: 512px
+    background-color: $podcast-black
+    #video-and-blog
+        .orange-card
+            background-color: $podcast-orange
+            height: 440px
+            width: 1220px
+            margin: 0 auto
+            border-radius: 0 0 20px 20px
+            position: relative
+        .row
+            display: flex
+            flex-direction: row
+            justify-content: space-evenly
+            text-align: center
+        .col-md-4
+            flex: 1
+            width: 33.33%
+            height: 400px
+            margin: 0 auto
+            position: relative
+            p
+                color: $podcast-black
+                margin: 20px
+            .gallery-item
+                margin: auto
+                width: 300px
+                height: 175px
+                .gallery-image
+                    height: 100%
+                    width: 100%
+                .gallery-title
+                    font-weight: bold
+                    font-size: 1.25em
+                .gallery-date
+        header
+            color: $podcast-black
+            margin-bottom: 20px
+        #subheader
+                color: $podcast-black
+                font-size: 1.5em
+                font-weight: bold
+                position: absolute
+                bottom: 0
+                margin-bottom: 20px
+                a
+                    color: unset
+                    text-decoration: none
+                    &:hover
+                        text-decoration: underline
+                    
+
+
+#signup
+    background-color: $podcast-indigo
+
+
             

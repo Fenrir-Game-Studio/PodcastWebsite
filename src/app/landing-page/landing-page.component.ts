@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { faTwitch, faYoutube, faPatreon } from '@fortawesome/free-brands-svg-icons'
 import { faCaretDown } from '@fortawesome/free-solid-svg-icons'
+import { faTwitch, faYoutube, faPatreon } from '@fortawesome/free-brands-svg-icons'
 
 @Component({
   selector: 'app-landing-page',
@@ -8,8 +8,8 @@ import { faCaretDown } from '@fortawesome/free-solid-svg-icons'
   styleUrls: ['./landing-page.component.sass']
 })
 export class LandingPageComponent {
+  faCaretDown = faCaretDown;
   faTwitch = faTwitch;
   faYoutube = faYoutube;
   faPatreon = faPatreon;
-  faCaretDown = faCaretDown;
 }

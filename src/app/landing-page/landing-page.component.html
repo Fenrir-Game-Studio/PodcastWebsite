@@ -10,9 +10,9 @@
         </div>
     </section>
     <section id="social-links">
-        <div class="slide-button"><fa-icon [icon]="faTwitch"></fa-icon>Twitch</div>
-        <div class="slide-button"><fa-icon [icon]="faYoutube"></fa-icon>YouTube</div>
-        <div class="slide-button"><fa-icon [icon]="faPatreon"></fa-icon>Patreon</div>
+        <app-social-link-button [title]="'Twitch'" [platform]="faTwitch"></app-social-link-button>
+        <app-social-link-button [title]="'YouTube'" [platform]="faYoutube"></app-social-link-button>
+        <app-social-link-button [title]="'Patreon'" [platform]="faPatreon"></app-social-link-button>
     </section>
     <section id="call-to-action">
         <p>
@@ -22,7 +22,35 @@
 </article>
 
 <article id="latest-content">
-    <section id="video-and-blog"></section>
+    <section id="video-and-blog">
+        <div class="orange-card">
+            <header>Latest Videos</header>
+            <div class="row">
+                <div class="col-md-4">
+                  <div class="gallery-item">
+                    <img class="gallery-image" src="/assets/image/gaming_placeholder.jpg">
+                    <p class="gallery-title">Revive Couch Co-op!</p>
+                    <p class="gallery-date">January 18, 2023</p>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="gallery-item">
+                      <img class="gallery-image" src="/assets/image/gameover_placeholder.jpg">
+                      <p class="gallery-title">Elden Ring Sucks</p>
+                      <p class="gallery-date">January 11, 2023</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="gallery-item">
+                      <img class="gallery-image" src="/assets/image/mario_placeholder.jpg">
+                      <p class="gallery-title">The Nintendo Model</p>
+                      <p class="gallery-date">January 4, 2023</p>
+                    </div>
+                </div>
+              </div>
+            <div id="subheader"><a href="">View More</a></div>
+        </div>
+    </section>
 </article>
 
 <article id="about">

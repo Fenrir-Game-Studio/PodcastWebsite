@@ -9,7 +9,7 @@ import { faTwitch, faYoutube, faPatreon, faLinkedin, faDiscord, faReddit, faTikt
 })
 export class FooterComponent {
   faTwitch = faTwitch;
-  faYouTube = faYoutube;
+  faYoutube = faYoutube;
   faPatreon = faPatreon;
   faLinkedIn = faLinkedin;
   faDiscord = faDiscord;

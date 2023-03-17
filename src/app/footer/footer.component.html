@@ -6,7 +6,8 @@
     <section id="schedule-socials">
         <header>Stream</header>
         <p>Mondays, 15 CET.</p>
-        <p> <fa-icon [icon]="faTwitch"></fa-icon> <span>Twitch</span> <fa-icon [icon]="faYouTube"></fa-icon> <span>YouTube</span></p>
+        <!--<p> <fa-icon [icon]="faTwitch"></fa-icon> <span>Twitch</span> <fa-icon [icon]="faYouTube"></fa-icon> <span>YouTube</span></p>-->
+        <app-social-link-button [title]="'Twitch'" [platform]="faTwitch"></app-social-link-button> <app-social-link-button [title]="'YouTube'" [platform]="faYoutube" ></app-social-link-button>
     </section>
     <section id="contact">
         <header>Contact</header>
@@ -18,7 +19,7 @@
         <header>Support</header>
         <ul>
             <a href="https://twitch.tv"><li><fa-icon [icon]="faTwitch"></fa-icon></li></a>
-            <a href="https://youtube.com"><li><fa-icon [icon]="faYouTube"></fa-icon></li></a>
+            <a href="https://youtube.com"><li><fa-icon [icon]="faYoutube"></fa-icon></li></a>
             <a href="https://patreon.com"><li><fa-icon [icon]="faPatreon"></fa-icon></li></a>
             <a href="https://linkedin.com"><li><fa-icon [icon]="faLinkedIn"></fa-icon></li></a>
             <a href="https://discord.com"><li><fa-icon [icon]="faDiscord"></fa-icon></li></a>
