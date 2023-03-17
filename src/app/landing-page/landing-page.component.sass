@@ -1,7 +1,7 @@
 @import 'src/assets/sass/variables'
 article
     width: auto
-section 
+section
     font-family: 'Montserrat', sans-serif
     header
         font-size: 2em
@@ -10,7 +10,7 @@ section
         color: $podcast-white
     &:nth-child(3)
         fa-icon
-            margin-right: $small-spacing
+        margin-right: $small-spacing
         .slide-button
             margin-right: $normal-spacing
             background-color: $podcast-black
@@ -27,21 +27,21 @@ section
             transition: ease-out 0.4s
             &:hover
                 box-shadow: inset 400px 0 0 0 $podcast-purple
-     
+
     &:nth-child(4)
         p
             font-size: 8em
             margin: 0
             animation: bounce 1.5s linear infinite alternate
             transition: transform 0.2s
-        @keyframes bounce 
-            0% 
+        @keyframes bounce
+            0%
                 transform: translateY(0px)
-    
-            50% 
+
+            50%
                 transform: translateY(-5px)
-    
-            100% 
+
+            100%
                 transform: translateY(0px)
 #hero-section
     height: 900px
@@ -56,61 +56,8 @@ section
         transform: translateX(-50%)
 
 #latest-content, #about
-    height: 512px
     background-color: $podcast-black
     #video-and-blog
-        .orange-card
-            background-color: $podcast-orange
-            height: 440px
-            width: 1220px
-            margin: 0 auto
-            border-radius: 0 0 20px 20px
-            position: relative
-        .row
-            display: flex
-            flex-direction: row
-            justify-content: space-evenly
-            text-align: center
-        .col-md-4
-            flex: 1
-            width: 33.33%
-            height: 400px
-            margin: 0 auto
-            position: relative
-            p
-                color: $podcast-black
-                margin: 20px
-            .gallery-item
-                margin: auto
-                width: 300px
-                height: 175px
-                .gallery-image
-                    height: 100%
-                    width: 100%
-                .gallery-title
-                    font-weight: bold
-                    font-size: 1.25em
-                .gallery-date
-        header
-            color: $podcast-black
-            margin-bottom: 20px
-        #subheader
-                color: $podcast-black
-                font-size: 1.5em
-                font-weight: bold
-                position: absolute
-                bottom: 0
-                margin-bottom: 20px
-                a
-                    color: unset
-                    text-decoration: none
-                    &:hover
-                        text-decoration: underline
-                    
-
 
 #signup
     background-color: $podcast-indigo
-
-
-            

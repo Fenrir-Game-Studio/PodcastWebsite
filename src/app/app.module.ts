@@ -14,6 +14,7 @@ import { FooterComponent } from './footer/footer.component';
 import { BlogComponent } from './blog/blog.component';
 import { AboutComponent } from './about/about.component';
 import { SocialLinkButtonComponent } from './social-link-button/social-link-button.component';
+import { GalleryContainerComponentComponent } from './gallery-container-component/gallery-container-component.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { SocialLinkButtonComponent } from './social-link-button/social-link-butt
     FooterComponent,
     BlogComponent,
     AboutComponent,
-    SocialLinkButtonComponent
+    SocialLinkButtonComponent,
+    GalleryContainerComponentComponent
   ],
   imports: [
     BrowserModule,
