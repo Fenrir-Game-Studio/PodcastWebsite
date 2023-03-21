@@ -8,8 +8,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatRadioModule, MAT_RADIO_DEFAULT_OPTIONS} from '@angular/material/radio';
 import {MatButtonModule} from '@angular/material/button';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
-import {MatBadge, MatBadgeModule} from '@angular/material/badge';
 import {MatIconModule} from '@angular/material/icon';
+import {MatMenuModule} from '@angular/material/menu';
 
 // Components
 import { AppComponent } from './app.component';
@@ -23,6 +23,7 @@ import { SocialLinkButtonComponent } from './social-link-button/social-link-butt
 import { GalleryContainerComponentComponent } from './gallery-container-component/gallery-container-component.component';
 import { SignUpButtonComponent } from './sign-up-button/sign-up-button.component';
 import { PollComponent } from './poll/poll.component';
+import { VideosComponent } from './videos/videos.component';
 
 
 @NgModule({
@@ -37,7 +38,8 @@ import { PollComponent } from './poll/poll.component';
     SocialLinkButtonComponent,
     GalleryContainerComponentComponent,
     SignUpButtonComponent,
-    PollComponent
+    PollComponent,
+    VideosComponent
   ],
   imports: [
     BrowserModule,
@@ -48,8 +50,8 @@ import { PollComponent } from './poll/poll.component';
     MatRadioModule,
     MatButtonModule,
     MatProgressBarModule,
-    MatBadgeModule,
-    MatIconModule
+    MatIconModule,
+    MatMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]

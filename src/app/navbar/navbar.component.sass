@@ -1,33 +1,38 @@
 @import 'src/assets/sass/variables'
 nav
-    margin: 0
-    padding: 0
     display: flex
-    justify-content: space-between
-    align-items: center
+    flex-direction: row
+    justify-content: center
+    gap: 8em
     list-style: none
     background: $podcast-black
-    font-family: 'Montserrat', sans-serif
+    font-family: $font-standard
+    #navbar-items
+        display: flex
+        flex-direction: row
+        justify-content: space-evenly
+        gap: 1em
     img
-        max-width: 80px
-        margin: 0 auto
-        display: block
+        max-width: 100px
     ul
         display: flex
         flex-direction: row
         margin: 0
         padding: 0
         align-items: center
-        li 
+        li
             margin: 0 1em
             list-style-type: none
     a
         text-decoration: none
-        font-size: 1.1em
-        display: block
-        text-align: center
+        font-size: $nav-item-font-size
+
     fa-icon, a
         color: $podcast-white
     fa-icon
         margin: 0px 10px 0px 10px
-        
+    button
+        color: $podcast-white
+        font-family: $font-standard
+        font-size: $nav-item-font-size
+    #navbar-submenu
