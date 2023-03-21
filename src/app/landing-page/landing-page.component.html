@@ -1,9 +1,11 @@
 <article id="hero-section">
-    <section id="poll">
-        <div>Hi I'm a poll placeholder</div>
-    </section>
     <section id="ad-copy">
-        <div class="blurcard">
+        <div [@slideIn]="slideInState" class="left-box">
+            <app-poll></app-poll>
+        </div>
+        <div class="center-box">
+        </div>
+        <div class="right-box">
             <header>EXPBoost is gamified podcast.</header>
             <p>Join us on a deepdive into game design.</p>
             <p>Every Monday, 15:00</p>
@@ -15,9 +17,7 @@
         <app-social-link-button [title]="'Patreon'" [platform]="faPatreon"></app-social-link-button>
     </section>
     <section id="call-to-action">
-        <p>
-            <fa-icon [icon]="faCaretDown"></fa-icon>
-        </p>
+        <fa-icon [icon]="faCaretDown"></fa-icon>
     </section>
 </article>
 
@@ -87,8 +87,8 @@
 <article id="signup">
     <section id="avatar-cta">
         <div id="avatar-container">
-            <img src="/assets/image/avatar.png">
-            <header>Vote, create, participate, earn and more!</header> 
+            <img src="./assets/image/avatar.png">
+            <header>Vote, create, participate, earn and more!</header>
             <div id="cta-text">
                 <div>
                     <p>Become part of the community</p>
