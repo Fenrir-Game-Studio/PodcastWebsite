@@ -1,6 +1,27 @@
+@import 'src/assets/sass/variables'
 form
     display: flex
     flex-direction: column
     justify-content: space-evenly
     fa-icon
         font-size: 0.75em
+    button
+        background-color: $podcast-orange
+        color: $podcast-black
+        font-weight: bold
+        margin-top: $global-margin-normal
+    .radio-button-group
+        display: flex
+        flex-direction: column
+        gap: 1em
+        font-size: $paragraph-size-normal
+    .outer-progress-bar
+        border-radius: 20px
+        border: 1px solid $podcast-white
+        height: 20px
+        mat-progress-bar
+            width: 95%
+            margin-top: 8px
+            margin-left: auto
+            margin-right: auto
+            
