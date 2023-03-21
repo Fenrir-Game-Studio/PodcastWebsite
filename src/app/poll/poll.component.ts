@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { faClock } from '@fortawesome/free-solid-svg-icons'
 
 @Component({
   selector: 'app-poll',
@@ -6,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./poll.component.sass']
 })
 export class PollComponent {
-
+  faClock = faClock
 }
