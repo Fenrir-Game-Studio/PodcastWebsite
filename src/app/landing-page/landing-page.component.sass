@@ -34,9 +34,6 @@ section
     background-repeat: no-repeat
     display: flex
     flex-direction: column
-    #call-to-action
-        font-size: 8em
-
     #ad-copy
         display: flex
         flex-direction: row
@@ -62,6 +59,17 @@ section
             flex-wrap: wrap
             justify-content: center
             gap: $global-gap-small
+#call-to-action
+        display: flex
+        flex-direction: row
+        justify-content: center
+        position: relative
+        .cta-container
+            position: absolute
+            bottom: 0
+            fa-icon
+                font-size: 8em
+                color: $podcast-black
 #latest-content, #about
     @extend .app-container
     background-color: $podcast-black
