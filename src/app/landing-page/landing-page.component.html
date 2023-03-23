@@ -4,19 +4,27 @@
             <div [@slideIn]="slideInState" class="left-box">
                 <app-poll></app-poll>
             </div>
-            <div class="center-box">
-            </div>
             <div class="right-box">
-                <h1>EXPBoost is gamified podcast.</h1>
-                <p>Join us on a deepdive into game design.</p>
-                <p>Every Monday, 15:00</p>
+                <div class="right-box-top">
+                    <h1>EXPBoost is gamified podcast.</h1>
+                    <p>Join us on a deepdive into game design.</p>
+                    <p>Every Monday, 15:00</p>
+                </div>
+                <div class="right-box-bottom">
+                    <app-social-link-button [title]="'Twitch'" [platform]="faTwitch"></app-social-link-button>
+                    <app-social-link-button [title]="'YouTube'" [platform]="faYoutube"></app-social-link-button>
+                    <app-social-link-button [title]="'Patreon'" [platform]="faPatreon"></app-social-link-button>
+                </div>
             </div>
+
         </section>
+        <!-- 
         <section id="social-links">
             <app-social-link-button [title]="'Twitch'" [platform]="faTwitch"></app-social-link-button>
             <app-social-link-button [title]="'YouTube'" [platform]="faYoutube"></app-social-link-button>
             <app-social-link-button [title]="'Patreon'" [platform]="faPatreon"></app-social-link-button>
         </section>
+        -->
         <section id="call-to-action">
             <fa-icon [icon]="faCaretDown"></fa-icon>
         </section>
@@ -36,24 +44,26 @@
                 <div class="wf-subcontainer-item">
                     <div>
                         <h1>We are EXPBoost</h1>
-                        <p>Some call it podcast. Others talkshow. We call it <span class="highlight-words">gamingenlightened.</span></p>
+                        <p>Some call it podcast. Others talkshow. We call it <span
+                                class="highlight-words">gamingenlightened.</span></p>
                         <p class="empty-hidden-feature"></p>
                     </div>
                 </div>
                 <div class="wf-subcontainer-item">
                     <div>
                         <h1>Video game news</h1>
-                        <p>We have our trigger finger on the games <span class="highlight-words">industry pulse</span> bringing you selected 
+                        <p>We have our trigger finger on the games <span class="highlight-words">industry pulse</span>
+                            bringing you selected
                             <span class="highlight-words">news</span> every episode.
-                    </p>
-                    <p class="hidden-feature">Video game news coverage</p>
+                        </p>
+                        <p class="hidden-feature">Video game news coverage</p>
                     </div>
                 </div>
                 <div class="wf-subcontainer-item">
                     <div>
                         <h1>New Game+</h1>
-                        <p>Look to the future as we scale up with  more content: <span class="highlight-words">blog
-                                posts</span>, <span class="highlight-words">game</span>  <span
+                        <p>Look to the future as we scale up with more content: <span class="highlight-words">blog
+                                posts</span>, <span class="highlight-words">game</span> <span
                                 class="highlight-words">releases</span>, <span class="highlight-words">let's
                                 learn</span> and more.</p>
                         <p class="hidden-feature">New Game Plus content</p>
