@@ -1,17 +1,17 @@
 @import 'src/assets/sass/variables'
 nav
-    display: flex
-    flex-direction: row
-    justify-content: center
-    gap: 8em
-    list-style: none
     background: $podcast-black
     font-family: $font-standard
+    .container
+        @extend .app-container
+        display: flex
+        flex-direction: row
+        justify-content: space-between
+        list-style: none
     #navbar-items
         display: flex
         flex-direction: row
-        justify-content: space-evenly
-        gap: 1em
+        gap: 2em
     img
         max-width: 100px
     ul

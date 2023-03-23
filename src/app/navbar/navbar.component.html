@@ -1,27 +1,29 @@
 <nav id="main-nav">
-    <div id="logo-container">
-        <a href=""><img id="logo" src="assets/image/logo.png"></a>
+    <div class="container">
+        <div id="logo-container">
+            <a href=""><img id="logo" src="assets/image/logo.png"></a>
+        </div>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <ul id="navbar-items">
+            <li><a href="">Home</a></li>
+            <li><a href="videos">Videos</a></li>
+            <li><a href="blog">Blog</a></li>
+            <li><a href="contact">Contact</a></li>
+            <li><a href="about">About</a></li>
+            <li id="navbar-submenu">
+                <button mat-button [matMenuTriggerFor]="menu">
+                    <fa-icon [icon]="faUser"></fa-icon>Account<fa-icon [icon]="faCaretDown"></fa-icon>
+                </button>
+                <mat-menu #menu="matMenu" xPosition="before">
+                    <button mat-menu-item>Login</button>
+                    <button mat-menu-item>Signup</button>
+                </mat-menu>
+            </li>
+        </ul>
     </div>
-    <p></p>
-    <p></p>
-    <p></p>
-    <p></p>
-    <p></p>
-    <p></p>
-    <ul id="navbar-items">
-        <li><a href="">Home</a></li>
-        <li><a href="videos">Videos</a></li>
-        <li><a href="blog">Blog</a></li>
-        <li><a href="contact">Contact</a></li>
-        <li><a href="about">About</a></li>
-        <li id="navbar-submenu">
-            <button mat-button [matMenuTriggerFor]="menu">
-            <fa-icon [icon]="faUser"></fa-icon>Account<fa-icon [icon]="faCaretDown"></fa-icon>
-            </button>
-            <mat-menu #menu="matMenu" xPosition="before">
-                <button mat-menu-item>Login</button>
-                <button mat-menu-item>Signup</button>
-            </mat-menu>
-        </li>
-    </ul>
 </nav>

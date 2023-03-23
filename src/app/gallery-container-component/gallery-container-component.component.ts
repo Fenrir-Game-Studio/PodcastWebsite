@@ -8,7 +8,7 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
   animations: [
     trigger('resizeContainer', [
       state('false', style({
-        height: 400
+        
       })),
       state('true', style({
         height: 912

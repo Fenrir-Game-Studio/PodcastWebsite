@@ -1,41 +1,36 @@
 @import 'src/assets/sass/variables'
-.orange-card
+.orange-card-container
     background-color: $podcast-orange
-    width: 1600px
     margin: 0 auto
+    padding: $global-padding-big
     border-radius: 0 0 20px 20px
     header
         font-size: 1.5em
         font-weight: bold
         margin-bottom: 20px
+        color: $podcast-black
     .row
         display: flex
         flex-direction: row
         justify-content: space-evenly
-        text-align: center
-        .col-md-4
-            height: 300px
-            margin: 0 auto
-            p
-                color: $podcast-black
-                margin: 20px
-            .gallery-item
-                margin: auto
-                width: 300px
-                height: 175px
-                .gallery-image
-                    height: 100%
-                    width: 100%
-                .gallery-title
-                    font-weight: bold
-                    font-size: 1.25em
-                .gallery-date
-        header
+        flex-wrap: wrap
+        gap: 2em
+        p
             color: $podcast-black
-            margin-bottom: 20px
+        img
+            display: block
+            width: 285px
+            height: 165px
+            object-fit: cover
+            object-position: center
+        .gallery-item
+        .gallery-title
+            font-weight: bold
+            font-size: $title-font-size
+
 #subheader
     color: $podcast-black
-    font-size: 1.5em
+    font-size: $header-size-small
     font-weight: bold
     a
         color: unset
