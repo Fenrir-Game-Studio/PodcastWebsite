@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 export class NavbarComponent {
   faUser = faUser;
   faCaretDown = faCaretDown;
+  isLoggedIn = false
   
   constructor(private router: Router) { }
 

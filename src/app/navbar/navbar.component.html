@@ -10,12 +10,41 @@
             <li><button mat-button (click)="navigateTo('contact')">Contact</button></li>
             <li><button mat-button (click)="navigateTo('about')">About</button></li>
             <li id="navbar-submenu">
-                <button mat-button mat-button [matMenuTriggerFor]="menu">
-                    <fa-icon [icon]="faUser"></fa-icon>Account<fa-icon [icon]="faCaretDown"></fa-icon>
-                </button>
-                <mat-menu #menu="matMenu" xPosition="before">
-                    <button (click)="navigateTo('')" mat-menu-item>Login</button>
-                    <button (click)="navigateTo('')" mat-menu-item>Signup</button>
+                <div *ngIf="isLoggedIn">
+                    <button mat-button mat-button [matMenuTriggerFor]="myProfileMenu">
+                        <fa-icon [icon]="faUser"></fa-icon>MyUsername<fa-icon [icon]="faCaretDown"></fa-icon>
+                    </button>
+                </div>
+                <div *ngIf="!isLoggedIn">
+                    <button mat-button mat-button [matMenuTriggerFor]="signinMenu">
+                        <fa-icon [icon]="faUser"></fa-icon>Account<fa-icon [icon]="faCaretDown"></fa-icon>
+                    </button>
+                </div>
+                <mat-menu #signinMenu="matMenu" xPosition="before">
+                    <mat-list>
+                        <mat-list-item>
+                            <button (click)="isLoggedIn = true" mat-menu-item>Login</button>
+                        </mat-list-item>
+                        <mat-list-item>
+                            <button (click)="navigateTo('')" mat-menu-item>Signup</button>
+                        </mat-list-item>
+                    </mat-list>
+                </mat-menu>
+                <mat-menu #myProfileMenu="matMenu" xPosition="before">
+                    <mat-list>
+                        <mat-list-item>
+                            <label>My Stuff</label>
+                        </mat-list-item>
+                        <mat-list-item>
+                            <button (click)="navigateTo('')" mat-menu-item>Profile</button>
+                        </mat-list-item>
+                        <mat-list-item>
+                            <label>Account</label>
+                        </mat-list-item>
+                        <mat-list-item>
+                            <button (click)="isLoggedIn = false" mat-menu-item>Logout</button>
+                        </mat-list-item>
+                    </mat-list>
                 </mat-menu>
             </li>
         </ul>

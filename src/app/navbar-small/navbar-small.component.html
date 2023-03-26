@@ -19,13 +19,16 @@
                         </mat-list-item>
                         <mat-list-item><label>My stuff</label></mat-list-item>
                         <mat-list-item (click)="navigateTo('myprofile')">Profile</mat-list-item>
+                        <mat-list-item><hr></mat-list-item>
+                        <mat-list-item><label>Account</label></mat-list-item>
+                        <mat-list-item (click)="isLoggedIn=false">Logout</mat-list-item>
                     </div>
                     <div *ngIf="!isLoggedIn">
                         <mat-list-item>
                             <hr>
                         </mat-list-item>
                         <mat-list-item><label>Account</label></mat-list-item>
-                        <mat-list-item (click)="navigateTo('')">Login</mat-list-item>
+                        <mat-list-item (click)="isLoggedIn=true">Login</mat-list-item>
                         <mat-list-item (click)="navigateTo('')">Signup</mat-list-item>
                     </div>
                 </mat-list>
