@@ -1,4 +1,5 @@
 import { Component, HostListener } from '@angular/core';
+import { ScreenWidthService } from './screen-width.service';
 
 @Component({
   selector: 'app-root',
@@ -7,13 +8,14 @@ import { Component, HostListener } from '@angular/core';
 })
 export class AppComponent {
   title = 'podcast-website';
-  isLargeScreen = true;
-  @HostListener('window:resize', ['$event'])
-  onResize() {
-    this.isLargeScreen = window.innerWidth > 1000; //Adjust breakpoint as needed
+  isLargeScreen: boolean;
+
+  constructor(private screenWidthService: ScreenWidthService) {
+    this.isLargeScreen = screenWidthService.isGreaterThanThreshold('sm');
   }
-  ngOnInit() {
-    this.isLargeScreen = window.innerWidth > 1000;
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event: any) {
+    this.isLargeScreen = this.screenWidthService.isGreaterThanThreshold('sm');
   }
 }
-

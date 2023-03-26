@@ -1,4 +1,5 @@
 @import 'src/assets/sass/variables'
+$hover: darken($podcast-black, 10%)
 nav
     background: $podcast-black
     font-family: $font-standard
@@ -22,15 +23,15 @@ nav
         padding: 0
         align-items: center
         li
-            margin: 0 1em
             list-style-type: none
     fa-icon, a
-        color: $podcast-white
+            color: $podcast-white
     fa-icon
-        margin: 0px 10px 0px 10px
+            margin: 0px 10px 0px 10px
     button
         color: $podcast-white
         font-family: $font-standard
         font-size: $nav-item-font-size
         margin: $global-margin-small 0 $global-margin-small 0
-    #navbar-submenu
+    .active
+        font-weight: bold

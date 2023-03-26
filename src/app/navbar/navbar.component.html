@@ -1,22 +1,30 @@
 <nav id="main-nav">
     <div class="container">
         <div id="logo-container">
-            <button mat-button (click)="navigateTo('')"><img id="logo" src="assets/image/logo.png"></button>
+            <button mat-button routerLink="home"><img id="logo" src="assets/image/logo.png"></button>
         </div>
         <ul id="navbar-items">
-            <li><button mat-button (click)="navigateTo('')">Home</button></li>
-            <li><button mat-button (click)="navigateTo('videos')">Videos</button></li>
-            <li><button mat-button (click)="navigateTo('blog')">Blog</button></li>
-            <li><button mat-button (click)="navigateTo('contact')">Contact</button></li>
-            <li><button mat-button (click)="navigateTo('about')">About</button></li>
+            <li><button mat-button routerLink="/" routerLinkActive="active"
+                    [routerLinkActiveOptions]="{ exact: true }">Home</button></li>
+            <li><button mat-button routerLink="/videos" routerLinkActive="active"
+                    [routerLinkActiveOptions]="{ exact: true }">Videos</button></li>
+            <li><button mat-button routerLink="/blog" routerLinkActive="active"
+                    [routerLinkActiveOptions]="{ exact: true }">Blog</button></li>
+            <li><button mat-button routerLink="/contact" routerLinkActive="active"
+                    [routerLinkActiveOptions]="{ exact: true }">Contact</button></li>
+            <li><button mat-button routerLink="/about" routerLinkActive="active"
+                    [routerLinkActiveOptions]="{ exact: true }">About</button></li>
+            <li id="navbar-submenu">
+                <!-- submenu code here -->
+            </li>
             <li id="navbar-submenu">
                 <div *ngIf="isLoggedIn">
-                    <button mat-button mat-button [matMenuTriggerFor]="myProfileMenu">
+                    <button mat-button [matMenuTriggerFor]="myProfileMenu">
                         <fa-icon [icon]="faUser"></fa-icon>MyUsername<fa-icon [icon]="faCaretDown"></fa-icon>
                     </button>
                 </div>
                 <div *ngIf="!isLoggedIn">
-                    <button mat-button mat-button [matMenuTriggerFor]="signinMenu">
+                    <button mat-button [matMenuTriggerFor]="signinMenu">
                         <fa-icon [icon]="faUser"></fa-icon>Account<fa-icon [icon]="faCaretDown"></fa-icon>
                     </button>
                 </div>
@@ -26,7 +34,7 @@
                             <button (click)="isLoggedIn = true" mat-menu-item>Login</button>
                         </mat-list-item>
                         <mat-list-item>
-                            <button (click)="navigateTo('')" mat-menu-item>Signup</button>
+                            <button routerLink="/" mat-menu-item>Signup</button>
                         </mat-list-item>
                     </mat-list>
                 </mat-menu>
@@ -36,7 +44,7 @@
                             <label>My Stuff</label>
                         </mat-list-item>
                         <mat-list-item>
-                            <button (click)="navigateTo('')" mat-menu-item>Profile</button>
+                            <button routerLink="/" mat-menu-item>Profile</button>
                         </mat-list-item>
                         <mat-list-item>
                             <label>Account</label>

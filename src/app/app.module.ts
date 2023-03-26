@@ -27,6 +27,7 @@ import { PollComponent } from './poll/poll.component';
 import { VideosComponent } from './videos/videos.component';
 import { NavbarSmallComponent } from './navbar-small/navbar-small.component';
 import { MyProfileComponent } from './my-profile/my-profile.component';
+import { ScreenWidthService } from './screen-width.service';
 
 
 @NgModule({
@@ -59,7 +60,7 @@ import { MyProfileComponent } from './my-profile/my-profile.component';
     MatMenuModule,
     MatListModule
   ],
-  providers: [],
+  providers: [ScreenWidthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

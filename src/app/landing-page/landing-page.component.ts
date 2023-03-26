@@ -44,7 +44,6 @@ export class LandingPageComponent implements OnInit {
     }, 3000)
     setInterval( () => {
       this.bobState = this.bobState === 'down' ? 'up' : 'down';
-      console.log(this.bobState)
     }, 1000)
   }
 
