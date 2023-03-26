@@ -8,25 +8,7 @@ section
         margin: 0
     div
         color: $podcast-white
-    &:nth-child(3)
-        fa-icon
-        margin-right: $small-spacing
 
-    &:nth-child(4)
-        p
-            font-size: 8em
-            margin: 0
-            animation: bounce 1.5s linear infinite alternate
-            transition: transform 0.2s
-        @keyframes bounce
-            0%
-                transform: translateY(0px)
-
-            50%
-                transform: translateY(-5px)
-
-            100%
-                transform: translateY(0px)
 #hero-section
     min-height: 900px
     background-image: url('/assets/image/Background_Hs2.png')
@@ -60,16 +42,16 @@ section
             justify-content: center
             gap: $global-gap-small
 #call-to-action
-        display: flex
-        flex-direction: row
-        justify-content: center
-        position: relative
-        .cta-container
-            position: absolute
-            bottom: 0
-            fa-icon
-                font-size: 8em
-                color: $podcast-black
+    display: flex
+    flex-direction: row
+    justify-content: center
+    position: relative
+    .cta-container
+        position: absolute
+        bottom: 0
+        fa-icon
+            font-size: 8em
+            color: $podcast-black
 #latest-content, #about
     @extend .app-container
     background-color: $podcast-black

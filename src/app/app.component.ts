@@ -10,10 +10,10 @@ export class AppComponent {
   isLargeScreen = true;
   @HostListener('window:resize', ['$event'])
   onResize() {
-    this.isLargeScreen = window.innerWidth > 950; //Adjust breakpoint as needed
+    this.isLargeScreen = window.innerWidth > 1000; //Adjust breakpoint as needed
   }
   ngOnInit() {
-    this.isLargeScreen = window.innerWidth > 950;
+    this.isLargeScreen = window.innerWidth > 1000;
   }
 }
 

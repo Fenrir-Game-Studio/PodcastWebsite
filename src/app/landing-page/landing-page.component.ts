@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { faCaretDown } from '@fortawesome/free-solid-svg-icons'
 import { faTwitch, faYoutube, faPatreon } from '@fortawesome/free-brands-svg-icons'
 import { trigger, state, style, animate, transition } from '@angular/animations'
+import { AppComponent } from '../app.component';
 
 @Component({
   selector: 'app-landing-page',
