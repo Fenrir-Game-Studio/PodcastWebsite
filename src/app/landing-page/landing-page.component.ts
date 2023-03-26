@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { faCaretDown } from '@fortawesome/free-solid-svg-icons'
 import { faTwitch, faYoutube, faPatreon } from '@fortawesome/free-brands-svg-icons'
-import { trigger, state, style, animate, transition, keyframes } from '@angular/animations'
-import { timer } from 'rxjs';
+import { trigger, state, style, animate, transition } from '@angular/animations'
 
 @Component({
   selector: 'app-landing-page',
@@ -19,19 +18,14 @@ import { timer } from 'rxjs';
       transition('hidden => visible', animate('1000ms cubic-bezier(0.175, 0.885, 0.32, 1.275)')),
       transition('visible => hidden', animate('1000ms cubic-bezier(0.175, 0.885, 0.32, 1.275)')),
     ]),
-    trigger('sinusoidal', [
-      transition('* => *', [
-        animate('2s',
-          keyframes([
-            style({transform: 'translateY(0)', offset: 0}),
-            style({transform: 'translateY(-10px)', offset: 0.2}),
-            style({transform: 'translateY(0)', offset: 0.4}),
-            style({transform: 'translateY(10px)', offset: 0.6}),
-            style({transform: 'translateY(0)', offset: 0.8}),
-            style({transform: 'translateY(-10px)', offset: 1.0}),
-          ])
-        )
-      ])
+    trigger ('bob', [
+      state ('up', style({
+        transform: 'translateY(-10px)'
+      })),
+      state ('down', style({
+        transform: 'translateY(0)'
+      })),
+      transition ('up <=> down', animate ('1.0s ease-in-out'))
     ])
   ]
 })
@@ -41,11 +35,16 @@ export class LandingPageComponent implements OnInit {
   faYoutube = faYoutube;
   faPatreon = faPatreon;
   slideInState = 'hidden'
+  bobState = 'down'
 
   ngOnInit(): void {
     setTimeout(() => {
       this.slideInContainer();
     }, 3000)
+    setInterval( () => {
+      this.bobState = this.bobState === 'down' ? 'up' : 'down';
+      console.log(this.bobState)
+    }, 1000)
   }
 
   slideInContainer() {

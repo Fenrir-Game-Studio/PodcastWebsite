@@ -10,6 +10,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {MatIconModule} from '@angular/material/icon';
 import {MatMenuModule} from '@angular/material/menu';
+import {MatList, MatListModule} from '@angular/material/list';
 
 // Components
 import { AppComponent } from './app.component';
@@ -24,6 +25,8 @@ import { GalleryContainerComponentComponent } from './gallery-container-componen
 import { SignUpButtonComponent } from './sign-up-button/sign-up-button.component';
 import { PollComponent } from './poll/poll.component';
 import { VideosComponent } from './videos/videos.component';
+import { NavbarSmallComponent } from './navbar-small/navbar-small.component';
+import { MyProfileComponent } from './my-profile/my-profile.component';
 
 
 @NgModule({
@@ -39,7 +42,9 @@ import { VideosComponent } from './videos/videos.component';
     GalleryContainerComponentComponent,
     SignUpButtonComponent,
     PollComponent,
-    VideosComponent
+    VideosComponent,
+    NavbarSmallComponent,
+    MyProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -51,7 +56,8 @@ import { VideosComponent } from './videos/videos.component';
     MatButtonModule,
     MatProgressBarModule,
     MatIconModule,
-    MatMenuModule
+    MatMenuModule,
+    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

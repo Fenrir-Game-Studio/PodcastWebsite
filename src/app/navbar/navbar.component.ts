@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { faUser, faCaretDown } from '@fortawesome/free-solid-svg-icons'
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -9,4 +10,10 @@ import { faUser, faCaretDown } from '@fortawesome/free-solid-svg-icons'
 export class NavbarComponent {
   faUser = faUser;
   faCaretDown = faCaretDown;
+  
+  constructor(private router: Router) { }
+
+  navigateTo(route: string) {
+    this.router.navigate([route]);
+  }
 }

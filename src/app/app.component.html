@@ -1,4 +1,5 @@
-<app-navbar></app-navbar>
+<app-navbar *ngIf="isLargeScreen"></app-navbar>
+<app-navbar-small *ngIf="!isLargeScreen"></app-navbar-small>
 <div class="container">
     <router-outlet></router-outlet>
 </div>

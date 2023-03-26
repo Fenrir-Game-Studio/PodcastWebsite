@@ -7,13 +7,14 @@ nav
         display: flex
         flex-direction: row
         justify-content: space-between
+        align-items: center
         list-style: none
     #navbar-items
         display: flex
         flex-direction: row
         gap: 1em
     img
-        max-width: 100px
+        max-width: $navbar-image-size
     ul
         display: flex
         flex-direction: row
@@ -23,10 +24,6 @@ nav
         li
             margin: 0 1em
             list-style-type: none
-    a
-        text-decoration: none
-        font-size: $nav-item-font-size
-
     fa-icon, a
         color: $podcast-white
     fa-icon
@@ -35,4 +32,5 @@ nav
         color: $podcast-white
         font-family: $font-standard
         font-size: $nav-item-font-size
+        margin: $global-margin-small 0 $global-margin-small 0
     #navbar-submenu
