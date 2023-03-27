@@ -4,6 +4,7 @@ article
     display: flex
     flex-direction: row
     justify-content: space-between
+    flex-wrap: wrap
     background: $podcast-black
     color: $podcast-white
     font-family: 'Montserrat', sans-serif
@@ -11,13 +12,15 @@ article
 section
     display: flex
     flex-direction: column
-    padding: $global-padding-normal 0 $global-padding-normal 0
+    padding: $global-padding-normal
+    flex-basis: 0
+    flex-grow: 1
     fa-icon, p
         color: $podcast-white
         margin: 0
         line-height: 2.5svh
     img
-        max-width: 200px
+        height: 130px
     li
         list-style-type: none
     header
@@ -26,8 +29,9 @@ section
 ul
     margin: 0
     padding: 0
-.social-links-container
+.social-buttons-container, .social-links-container
     display: flex
     flex-direction: row
-    justify-content: center
+    justify-content: flex-start
+    flex-wrap: wrap
     gap: $global-gap-tiny
