@@ -11,11 +11,11 @@ export class AppComponent {
   isLargeScreen: boolean;
 
   constructor(private screenWidthService: ScreenWidthService) {
-    this.isLargeScreen = screenWidthService.isGreaterThanThreshold('sm');
+    this.isLargeScreen = screenWidthService.isGreaterThanThreshold('md');
   }
 
   @HostListener('window:resize', ['$event'])
   onResize(event: any) {
-    this.isLargeScreen = this.screenWidthService.isGreaterThanThreshold('sm');
+    this.isLargeScreen = this.screenWidthService.isGreaterThanThreshold('md');
   }
 }

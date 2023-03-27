@@ -22,7 +22,7 @@ export interface Breakpoints {
 export const BREAKPOINTS: Breakpoints = {
   xs: 576,
   sm: 768,
-  md: 992,
+  md: 1001,
   lg: 1200,
   xl: 1600
 };

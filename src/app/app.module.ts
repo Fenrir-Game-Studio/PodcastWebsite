@@ -28,6 +28,7 @@ import { VideosComponent } from './videos/videos.component';
 import { NavbarSmallComponent } from './navbar-small/navbar-small.component';
 import { MyProfileComponent } from './my-profile/my-profile.component';
 import { ScreenWidthService } from './screen-width.service';
+import { FooterSmallComponent } from './footer-small/footer-small.component';
 
 
 @NgModule({
@@ -45,7 +46,8 @@ import { ScreenWidthService } from './screen-width.service';
     PollComponent,
     VideosComponent,
     NavbarSmallComponent,
-    MyProfileComponent
+    MyProfileComponent,
+    FooterSmallComponent
   ],
   imports: [
     BrowserModule,
