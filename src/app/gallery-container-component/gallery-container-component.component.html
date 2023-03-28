@@ -1,33 +1,10 @@
-<div [@resizeContainer]="expanded" class="orange-card-container">
+<div [@expandContainer]="expanded ? 'expanded' : 'collapsed'" class="orange-card-container">
     <header>Latest Videos</header>
     <div class="row">
-        <div>
-            <div class="gallery-item">
-                <img class="gallery-image" src="./assets/image/gaming_placeholder.jpg">
-                <p class="gallery-title">Revive Couch Co-op!</p>
-                <p class="gallery-date">January 18, 2023</p>
-            </div>
-        </div>
-        <div>
-            <div class="gallery-item">
-                <img class="gallery-image" src="./assets/image/gameover_placeholder.jpg">
-                <p class="gallery-title">Elden Ring Sucks</p>
-                <p class="gallery-date">January 11, 2023</p>
-            </div>
-        </div>
-        <div>
-            <div class="gallery-item">
-                <img class="gallery-image" src="./assets/image/mario_placeholder.jpg">
-                <p class="gallery-title">The Nintendo Model</p>
-                <p class="gallery-date">January 4, 2023</p>
-            </div>
-        </div>
-        <div>
-            <div class="gallery-item">
-                <img class="gallery-image" src="./assets/image/mario_placeholder.jpg">
-                <p class="gallery-title">The Nintendo Model</p>
-                <p class="gallery-date">January 4, 2023</p>
-            </div>
+        <div *ngFor="let item of galleryItems.slice(0, numItemsToShow)">
+            <img class="gallery-image" [src]="item.image">
+            <p class="gallery-title">{{item.title}}</p>
+            <p class="gallery-date">{{item.date}}</p>
         </div>
     </div>
     <div id="subheader"><a (click)="expandContainer()">{{cta}}</a></div>

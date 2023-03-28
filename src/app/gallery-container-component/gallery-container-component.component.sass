@@ -4,6 +4,9 @@
     margin: 0 auto
     padding: $global-padding-big
     border-radius: 0 0 20px 20px
+    display: flex
+    flex-direction: column
+    transition: height 0.5s ease-out
     header
         font-size: 1.5em
         font-weight: bold
@@ -14,7 +17,10 @@
         flex-direction: row
         justify-content: space-evenly
         flex-wrap: wrap
-        gap: 2em
+        gap: $global-gap-normal
+        div
+            display: flex
+            flex-direction: column
         p
             color: $podcast-black
         img
@@ -23,7 +29,6 @@
             height: 165px
             object-fit: cover
             object-position: center
-        .gallery-item
         .gallery-title
             font-weight: bold
             font-size: $title-font-size
@@ -38,3 +43,5 @@
         &:hover
             text-decoration: underline
             cursor: pointer
+div
+    display: flex

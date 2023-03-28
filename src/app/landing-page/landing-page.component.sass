@@ -65,23 +65,30 @@ section
     background-position: center
     #waterfall
         display: flex
+        flex-direction: row
         justify-content: center
-        height: 100svh
-    #wf-container
+        min-height: 100svh
+        padding: $global-padding-normal
+    .wf-outer-box
         display: flex
         flex-direction: row
-        @media (max-width: 576px)
+        flex-wrap: wrap
+        padding: $global-padding-normal
+        .wf-left-box, .wf-right-box
+            display: flex
             flex-direction: column
-            width: 100svw
-    .wf-subcontainer
-        flex-direction: column
-        display: flex
-        justify-content: space-evenly
-        align-items: flex-end
+            justify-content: space-evenly
+            flex-basis: 0
+            flex-grow: 1
+            max-width: 100svw
+            padding: $global-padding-normal
+            @include breakpoint('sm')
+                max-width: 30svw
     .highlight-words
         color: $podcast-orange
         font-weight: bold
     .hidden-feature, .empty-hidden-feature
+        @include breakpoint('md')
         display: flex
         align-items: center
         justify-content: space-evenly
@@ -91,11 +98,11 @@ section
         -webkit-transition: ease-out 0.6s
         -moz-transition: ease-out 0.6s
         transition: ease-out 0.6s
-    .wf-subcontainer-item
+    .hidden-feature
+        @include breakpoint('md')
         &:hover
-            .hidden-feature
-                color: $podcast-white
-                box-shadow: inset 100vw 0 0 0 $podcast-purple
+            color: $podcast-white
+            box-shadow: inset 100vw 0 0 0 $podcast-purple
 
 #signup
     @extend .app-container
