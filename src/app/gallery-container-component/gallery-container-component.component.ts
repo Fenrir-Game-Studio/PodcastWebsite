@@ -8,7 +8,7 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
   animations: [
     trigger('expandContainer', [
       state('collapsed', style({
-        height: 343,
+        height: '353px',
         overflow: 'hidden'
       })),
       state('expanded', style({
@@ -20,8 +20,9 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
         }))
       ]),
       transition('expanded => collapsed', [
-        animate('500ms ease-out', style({
-
+        animate('500ms ease-in-out', style({
+          height: '353px',
+          overflow: 'hidden'
         }))
       ])
     ])
@@ -52,11 +53,14 @@ export class GalleryContainerComponentComponent {
 
   expandContainer() {
     this.expanded = !this.expanded;
+    this.cta = this.expanded ? 'View Less' : 'View More';
 
     if (this.expanded) {
       this.numItemsToShow += 8;
     } else {
-      this.numItemsToShow = 4;
+      setTimeout(() => {
+        this.numItemsToShow = 4;
+      }, 500)
     }
   }
 }
