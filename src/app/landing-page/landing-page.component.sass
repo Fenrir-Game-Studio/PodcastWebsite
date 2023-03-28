@@ -11,7 +11,7 @@ section
 
 #hero-section
     min-height: 900px
-    background-image: url('/assets/image/Background_Hs2.png')
+    background-image: url('./assets/image/Background_Hs2.png')
     background-size: fill
     background-repeat: no-repeat
     background-position: center
@@ -59,22 +59,25 @@ section
 
 #about
     @extend .app-container
-    background-image: url('/assets/image/waterfall_opaque.png')
+    background-image: url('./assets/image/waterfall_opaque.png')
     background-size: contain
     background-repeat: no-repeat
     background-position: center
+    #waterfall
+        display: flex
+        justify-content: center
+        height: 100svh
     #wf-container
         display: flex
         flex-direction: row
-        flex-wrap: wrap
-        justify-content: center
-        align-items: center
-        height: 100svh
-        gap: 12.5em
+        @media (max-width: 576px)
+            flex-direction: column
+            width: 100svw
     .wf-subcontainer
-        display: flex
         flex-direction: column
-        max-width: 25vw
+        display: flex
+        justify-content: space-evenly
+        align-items: flex-end
     .highlight-words
         color: $podcast-orange
         font-weight: bold
@@ -89,7 +92,6 @@ section
         -moz-transition: ease-out 0.6s
         transition: ease-out 0.6s
     .wf-subcontainer-item
-        min-height: 20vh
         &:hover
             .hidden-feature
                 color: $podcast-white
