@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { trigger, state, style, animate, transition } from '@angular/animations'
+import { ScreenWidthService } from '../screen-width.service';
 
 @Component({
   selector: 'app-gallery-container-component',
@@ -28,7 +29,7 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
     ])
   ]
 })
-export class GalleryContainerComponentComponent {
+export class GalleryContainerComponentComponent implements OnInit {
   expanded: boolean = false;
   cta: string = "View More"
   numItemsToShow = 4;
@@ -49,7 +50,12 @@ export class GalleryContainerComponentComponent {
     { image: './assets/image/mario_placeholder.jpg', title: 'The Nintendo Model', date: 'January 4, 2023' }
   ];
 
-  constructor() { }
+  constructor(private screenWidthService: ScreenWidthService) {
+
+  }
+  ngOnInit(): void {
+    this.setNumItemsToShowFromThreshold()
+  }
 
   expandContainer() {
     this.expanded = !this.expanded;
@@ -59,8 +65,24 @@ export class GalleryContainerComponentComponent {
       this.numItemsToShow += 8;
     } else {
       setTimeout(() => {
-        this.numItemsToShow = 4;
+        this.setNumItemsToShowFromThreshold()
       }, 500)
     }
+  }
+
+  setNumItemsToShowFromThreshold() {
+    let deviceWidth = this.screenWidthService.getDeviceWidth();
+
+    if(deviceWidth > this.screenWidthService.getBreakpoint('xl')){
+      this.numItemsToShow = 4;
+    }else if(deviceWidth > this.screenWidthService.getBreakpoint('lg')){
+      this.numItemsToShow = 3;
+    }else if(deviceWidth > this.screenWidthService.getBreakpoint('md')){
+      this.numItemsToShow = 2;
+    }else{
+      this.numItemsToShow = 1;
+    }
+    console.log(this.numItemsToShow);
+
   }
 }

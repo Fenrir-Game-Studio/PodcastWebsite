@@ -13,6 +13,14 @@ export class ScreenWidthService {
   isGreaterThanThreshold(breakpoint: string): boolean {
     return window.innerWidth > BREAKPOINTS[breakpoint]
   }
+
+  getDeviceWidth(): number {
+    return window.innerWidth;
+  }
+
+  getBreakpoint(breakpoint: string) {
+    return BREAKPOINTS[breakpoint];
+  }
 }
 
 export interface Breakpoints {
@@ -23,6 +31,6 @@ export const BREAKPOINTS: Breakpoints = {
   xs: 576,
   sm: 768,
   md: 1001,
-  lg: 1200,
-  xl: 1600
+  lg: 1272,
+  xl: 1668
 };
