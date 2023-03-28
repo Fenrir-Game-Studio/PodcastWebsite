@@ -15,7 +15,7 @@ section
         font-size: $header-size-small
         font-weight: bold
     p
-        font-size: $paragraph-size-small
+        font-size: clamp(12px, 1.5svw, 16px)
 ul
     margin: 0
     padding: 0
@@ -32,7 +32,13 @@ ul
     justify-content: space-evenly
     align-items: center
     section
-        padding: $global-padding-normal * 4
+        padding: $global-padding-normal
+    #logo-copyright
+        p
+            text-align: center
+    #support
+        li
+            margin-top: $global-margin-normal
 .xs-container
     display: flex
     flex-direction: column
@@ -53,7 +59,7 @@ ul
 .social-buttons-container, .social-links-container
     display: flex
     flex-direction: row
-    justify-content: flex-start
+    justify-content: center
     gap: $global-gap-small
 
 @media(max-width: 1001px)
