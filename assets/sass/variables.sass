@@ -40,10 +40,38 @@ $navbar-image-size: 100px
 // Paths
 $filepath: '../../assets/image/'
 
+// Thresholds
+$xs: 576px
+$sm: 768px
+$md: 1001px
+$lg: 1200px
+$xl: 1600px
+
+// Media queries
+@mixin breakpoint($breakpoint)
+    @if $breakpoint == 'xs'
+        @media (min-width: 576px)
+            @content
+    @else if $breakpoint == 'sm'
+        @media (min-width: 768px)
+            @content
+
+    @else if $breakpoint == 'md'
+        @media (min-width: 1001px)
+            @content
+
+    @else if $breakpoint == 'lg'
+        @media (min-width: 1200px)
+            @content
+
+    @else if $breakpoint == 'xl'
+        @media (min-width: 1600px)
+            @content
+
 // Elements
 .blur-card
     background-color: $podcast-blurcard
     padding: $global-padding-normal
     backdrop-filter: blur($filter-value-blur)
 .app-container
-    padding: 0 5% 0 5%
+    padding: 0 10% 0 10%
