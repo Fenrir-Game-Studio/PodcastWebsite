@@ -21,6 +21,10 @@ export class ScreenWidthService {
   getBreakpoint(breakpoint: string) {
     return BREAKPOINTS[breakpoint];
   }
+
+  getIsLargeScreen(): boolean {
+    return this.isLargeScreen;
+  }
 }
 
 export interface Breakpoints {

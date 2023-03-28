@@ -10,7 +10,8 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {MatIconModule} from '@angular/material/icon';
 import {MatMenuModule} from '@angular/material/menu';
-import {MatList, MatListModule} from '@angular/material/list';
+import {MatListModule} from '@angular/material/list';
+import {MatDialogModule} from '@angular/material/dialog';
 
 // Components
 import { AppComponent } from './app.component';
@@ -60,7 +61,8 @@ import { FooterSmallComponent } from './footer-small/footer-small.component';
     MatProgressBarModule,
     MatIconModule,
     MatMenuModule,
-    MatListModule
+    MatListModule,
+    MatDialogModule
   ],
   providers: [ScreenWidthService],
   bootstrap: [AppComponent]

@@ -3,6 +3,11 @@ form
     display: flex
     flex-direction: column
     justify-content: space-evenly
+    overflow: hidden
+    @media (max-width: 1001px)
+        color: $podcast-white
+        background-color: $podcast-black
+        padding: $global-padding-normal
     fa-icon
         font-size: 0.75em
     button

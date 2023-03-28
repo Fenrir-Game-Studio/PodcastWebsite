@@ -1,8 +1,11 @@
 <header>
     <article id="hero-section">
         <section id="ad-copy">
-            <div [@slideIn]="slideInState" class="left-box">
+            <div *ngIf="isLargeScreen" [@slideIn]="slideInState" class="left-box">
                 <app-poll></app-poll>
+            </div>
+            <div *ngIf="!isLargeScreen" class="left-box-xs">
+                <fa-icon (click)="openDialog()" [icon]="faCaretRight"></fa-icon>
             </div>
             <div class="right-box">
                 <div class="right-box-top">

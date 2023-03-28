@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { faCaretDown } from '@fortawesome/free-solid-svg-icons'
+import { faCaretDown, faCaretRight } from '@fortawesome/free-solid-svg-icons'
 import { faTwitch, faYoutube, faPatreon } from '@fortawesome/free-brands-svg-icons'
 import { trigger, state, style, animate, transition } from '@angular/animations'
-import { AppComponent } from '../app.component';
+import { ScreenWidthService } from '../screen-width.service';
+import { MatDialog } from '@angular/material/dialog';
+import { PollComponent } from '../poll/poll.component';
 
 @Component({
   selector: 'app-landing-page',
@@ -35,8 +37,25 @@ export class LandingPageComponent implements OnInit {
   faTwitch = faTwitch;
   faYoutube = faYoutube;
   faPatreon = faPatreon;
+  faCaretRight = faCaretRight
   slideInState = 'hidden'
   bobState = 'down'
+  isLargeScreen: boolean = false;
+
+  constructor(private screenWidthService: ScreenWidthService, private dialog: MatDialog) {
+    this.isLargeScreen = this.screenWidthService.getIsLargeScreen();
+  }
+
+  openDialog() {
+    const dialogRef = this.dialog.open(PollComponent, {
+      height: `50.75%`,
+      width: `100%`,
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    })
+  }
 
   ngOnInit(): void {
     setTimeout(() => {

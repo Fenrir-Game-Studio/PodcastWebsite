@@ -42,6 +42,17 @@ section
             flex-wrap: wrap
             justify-content: center
             gap: $global-gap-small
+        .left-box-xs
+            position: absolute
+            left: 0
+            top: 50%
+            transform: translateY(-50%)
+            width: 100%
+            fa-icon
+                padding: 0.15em 0.25em 0.15em 0.15em
+                border-radius: 0 $global-radius-small $global-radius-small 0
+                font-size: 4em
+                @extend .blur-card
 #call-to-action
     display: flex
     flex-direction: row
@@ -52,7 +63,7 @@ section
         bottom: 0
         fa-icon
             font-size: 8em
-            color: $podcast-black
+        color: $podcast-black
 #latest-content, #about
     @extend .app-container
     background-color: $podcast-black
