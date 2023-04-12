@@ -3,11 +3,13 @@ header
 section
     font-family: 'Montserrat', sans-serif
     h1
-        font-size: $header-size-small
+        font-size: $header-size-tiny
         font-weight: bold
         margin: 0
-    div
+    div, p, h1, a
         color: $podcast-white
+    p
+        font-size: $paragraph-size-small
     @include breakpoint('md')
         h1
             font-size: $header-size-big
@@ -18,11 +20,11 @@ section
     background-position: center
     display: flex
     flex-direction: column
+    gap: 1em
     min-height: 92svh
     #ad-copy
         display: flex
         flex-direction: column
-        align-items: stretch
         gap: $global-gap-normal
         p
             color: $podcast-white
@@ -41,6 +43,8 @@ section
             align-items: center
             gap: $global-gap-small
         .left-box-xs
+            @extend .blur-card
+            padding: 0
             position: absolute
             left: 0
             top: 50%
@@ -49,7 +53,6 @@ section
                 padding: 0.15em 0.25em 0.15em 0.15em
                 border-radius: 0 $global-radius-small $global-radius-small 0
                 font-size: 4em
-                @extend .blur-card
         @include breakpoint('md')
             flex-direction: row
             justify-content: flex-end
@@ -66,7 +69,11 @@ section
                 justify-content: center
             .left-box
                 border-radius: 0 20px 20px 0
-            
+#bar
+    background-color: $podcast-orange
+    width: 100svw
+    height: 12svh
+    overflow: hidden
 
 #call-to-action
     display: flex
@@ -78,7 +85,7 @@ section
         bottom: 0
         fa-icon
             font-size: 6em
-        color: $podcast-black
+            color: $podcast-black
 #latest-content, #about
     @extend .app-container
     background-color: $podcast-black
@@ -86,7 +93,7 @@ section
 #about
     @extend .app-container
     background-image: url('#{$filepath}waterfall_opaque.png')
-    background-size: contain
+    background-size: fill
     background-repeat: no-repeat
     background-position: center
     #waterfall
@@ -94,12 +101,12 @@ section
         flex-direction: row
         justify-content: center
         min-height: 100svh
-        padding: $global-padding-normal
+        padding: $global-padding-normal 0 $global-padding-normal 0
+        text-align: center
     .wf-outer-box
         display: flex
-        flex-direction: row
-        flex-wrap: wrap
-        padding: $global-padding-normal
+        flex-direction: column
+        gap: 2em
         .wf-left-box, .wf-right-box
             display: flex
             flex-direction: column
@@ -107,28 +114,36 @@ section
             flex-basis: 0
             flex-grow: 1
             max-width: 100svw
-            padding: $global-padding-normal
+            gap: 2em
             @include breakpoint('sm')
                 max-width: 30svw
     .highlight-words
         color: $podcast-orange
         font-weight: bold
-    .hidden-feature, .empty-hidden-feature
-        @include breakpoint('md')
-        display: flex
-        align-items: center
-        justify-content: space-evenly
-        height: 40px
-        color: $podcast-black
-        box-shadow: inset 0 0 0 0 $podcast-purple
-        -webkit-transition: ease-out 0.6s
-        -moz-transition: ease-out 0.6s
-        transition: ease-out 0.6s
     .hidden-feature
-        @include breakpoint('md')
-        &:hover
-            color: $podcast-white
-            box-shadow: inset 100vw 0 0 0 $podcast-purple
+        box-shadow: inset 100vw 0 0 0 $podcast-purple
+    @include breakpoint('sm')
+        background-size: contain
+        #waterfall
+            text-align: left
+        .wf-outer-box
+            flex-direction: row
+        #waterfall, .wf-outer-box, .wfleft-box, .wf-right-box
+            padding: $global-padding-normal
+        .hidden-feature, .empty-hidden-feature
+            display: flex
+            align-items: center
+            justify-content: space-evenly
+            height: 40px
+            color: $podcast-black
+            box-shadow: inset 0 0 0 0 $podcast-purple
+            -webkit-transition: ease-out 0.6s
+            -moz-transition: ease-out 0.6s
+            transition: ease-out 0.6s
+        .hidden-feature
+            &:hover
+                color: $podcast-white
+                box-shadow: inset 100vw 0 0 0 $podcast-purple
 
 #signup
     @extend .app-container
@@ -148,4 +163,5 @@ section
             width: 220px
         #cta-text
             display: flex
+            align-items: center
             gap: 0.5em

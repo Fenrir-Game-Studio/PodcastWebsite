@@ -73,14 +73,16 @@ export class GalleryContainerComponentComponent implements OnInit {
   setNumItemsToShowFromThreshold() {
     let deviceWidth = this.screenWidthService.getDeviceWidth();
 
-    if(deviceWidth > this.screenWidthService.getBreakpoint('xl')){
+    if(deviceWidth >= this.screenWidthService.getBreakpoint('xl')){
       this.numItemsToShow = 4;
-    }else if(deviceWidth > this.screenWidthService.getBreakpoint('lg')){
+    }else if(deviceWidth >= this.screenWidthService.getBreakpoint('lg')){
+      this.numItemsToShow = 4;
+    }else if(deviceWidth >= this.screenWidthService.getBreakpoint('md')){
       this.numItemsToShow = 3;
-    }else if(deviceWidth > this.screenWidthService.getBreakpoint('md')){
+    }else if (deviceWidth >= this.screenWidthService.getBreakpoint('sm')) {
       this.numItemsToShow = 2;
-    }else{
-      this.numItemsToShow = 1;
+    }else {
+      this.numItemsToShow = 1
     }
     console.log(this.numItemsToShow);
 

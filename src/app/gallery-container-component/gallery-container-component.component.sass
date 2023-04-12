@@ -1,16 +1,16 @@
 @import 'src/assets/sass/variables'
 .orange-card-container
     background-color: $podcast-orange
-    margin: 0 auto
     padding: $global-padding-big
     border-radius: 0 0 20px 20px
     display: flex
     flex-direction: column
+    justify-content: space-between
     header
         font-size: 1.5em
         font-weight: bold
-        margin-bottom: 20px
         color: $podcast-black
+        text-align: center
     .row
         display: flex
         flex-direction: row
@@ -22,25 +22,29 @@
             flex-direction: column
         p
             color: $podcast-black
+            text-align: center
+        img
+            width: 203px
+            height: 135px
+        .gallery-title
+            font-weight: bold
+            font-size: $title-font-size
+    @include breakpoint('md')
         img
             display: block
             width: 285px
             height: 165px
             object-fit: cover
             object-position: center
-        .gallery-title
-            font-weight: bold
-            font-size: $title-font-size
 
 #subheader
     color: $podcast-black
-    font-size: $header-size-small
+    font-size: $header-size-tiny
     font-weight: bold
+    text-align: center
     a
         color: unset
         text-decoration: none
         &:hover
             text-decoration: underline
             cursor: pointer
-div
-    display: flex
