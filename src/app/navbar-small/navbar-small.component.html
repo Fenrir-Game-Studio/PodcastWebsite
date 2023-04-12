@@ -5,7 +5,7 @@
         </div>
         <div id="menu-container">
             <fa-icon [icon]="faBars" [matMenuTriggerFor]="rootMenu"></fa-icon>
-            <mat-menu #rootMenu="matMenu" xPosition="before">
+            <mat-menu #rootMenu="matMenu" >
                 <mat-list>
                     <mat-list-item><label>Navigation</label></mat-list-item>
                     <mat-list-item (click)="navigateTo('')">Home</mat-list-item>

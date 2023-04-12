@@ -21,6 +21,16 @@ import { PollComponent } from '../poll/poll.component';
       transition('hidden => visible', animate('1000ms cubic-bezier(0.175, 0.885, 0.32, 1.275)')),
       transition('visible => hidden', animate('1000ms cubic-bezier(0.175, 0.885, 0.32, 1.275)')),
     ]),
+    trigger('slideInVoteButton', [
+      state('hidden', style({
+        transform: 'translateX(-100%)'
+      })),
+      state('visible', style({
+        transform: 'translateX(-0%)'
+      })),
+      transition('hidden => visible', animate('1000ms cubic-bezier(0.175, 0.885, 0.32, 1.275)')),
+      transition('visible => hidden', animate('1000ms cubic-bezier(0.175, 0.885, 0.32, 1.275)')),
+    ]),
     trigger ('bob', [
       state ('up', style({
         transform: 'translateY(-10px)'
@@ -49,7 +59,10 @@ export class LandingPageComponent implements OnInit {
   openDialog() {
     const dialogRef = this.dialog.open(PollComponent, {
       width: `100%`,
+      enterAnimationDuration: 600,
+      exitAnimationDuration: 600
     });
+
 
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
