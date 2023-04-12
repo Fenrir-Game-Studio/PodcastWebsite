@@ -18,6 +18,7 @@ section
     background-image: url(#{$filepath}Background_Hs2.png)
     background-repeat: no-repeat
     background-position: center
+    background-size: cover
     display: flex
     flex-direction: column
     gap: 1em
@@ -46,11 +47,12 @@ section
                 flex-direction: row
                 justify-content: center
         @include breakpoint('md')
+            display: flex
             flex-direction: row
             justify-content: flex-end
             align-items: flex-start
-            padding-top: $global-padding-normal
             .right-box
+                padding-top: $global-padding-normal
                 justify-content: flex-start
                 width: 50svw
             .right-box-top

@@ -10,7 +10,7 @@
                     <p>Join us on a deepdive into game design.</p>
                     <p>Every Monday, 15:00</p>
                 </div>
-                <div [@slideInVoteButton]="slideInState" class="middle-box">
+                <div *ngIf="!isLargeScreen" [@slideInVoteButton]="slideInState" class="middle-box">
                     <button (click)="openDialog()" mat-raised-button color="primary">Make your voice heard with our polls</button>
                 </div>
                 <div class="right-box-bottom">
