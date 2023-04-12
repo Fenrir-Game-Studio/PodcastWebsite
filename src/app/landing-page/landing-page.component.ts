@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, Renderer2 } from '@angular/core';
 import { faCaretDown, faCaretRight } from '@fortawesome/free-solid-svg-icons'
 import { faTwitch, faYoutube, faPatreon } from '@fortawesome/free-brands-svg-icons'
 import { trigger, state, style, animate, transition } from '@angular/animations'
@@ -52,7 +52,8 @@ export class LandingPageComponent implements OnInit {
   bobState = 'down'
   isLargeScreen: boolean = false;
 
-  constructor(private screenWidthService: ScreenWidthService, private dialog: MatDialog) {
+  constructor(private screenWidthService: ScreenWidthService, private dialog: MatDialog,
+    private elementRef: ElementRef, private renderer: Renderer2) {
     this.isLargeScreen = this.screenWidthService.getIsLargeScreen();
   }
 
@@ -66,6 +67,8 @@ export class LandingPageComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
+      const signupElement = this.elementRef.nativeElement.querySelector('#signup');
+      signupElement.scrollIntoView({behavior: 'smooth'});
     })
   }
 
