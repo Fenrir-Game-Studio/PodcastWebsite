@@ -7,6 +7,7 @@ import { faClock } from '@fortawesome/free-solid-svg-icons'
   templateUrl: './poll.component.html',
   styleUrls: ['./poll.component.sass']
 })
+
 export class PollComponent {
   faClock = faClock
 }

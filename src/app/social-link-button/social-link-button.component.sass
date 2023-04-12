@@ -1,8 +1,5 @@
 @import 'src/assets/sass/variables'
 
-fa-icon
-
-    
 .slide-button   
     width: 100px
     text-align: center
@@ -18,5 +15,6 @@ fa-icon
     -webkit-transition: ease-out 0.4s
     -moz-transition: ease-out 0.4s
     transition: ease-out 0.4s
-    &:hover
-        box-shadow: inset 200px 0 0 0 $podcast-purple
+    @include breakpoint('md')
+        &:hover
+            box-shadow: inset 200px 0 0 0 $podcast-purple

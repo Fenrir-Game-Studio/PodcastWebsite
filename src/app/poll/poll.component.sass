@@ -4,10 +4,11 @@ form
     flex-direction: column
     justify-content: space-evenly
     overflow: hidden
-    @media (max-width: 576px)
-        color: $podcast-white
-        background-color: $podcast-black
-        padding: $global-padding-normal
+    color: $podcast-white
+    background-color: $podcast-black
+    padding: $global-padding-normal
+    @include breakpoint('md')
+        background-color: transparent
     fa-icon
         font-size: 0.75em
     button
@@ -15,18 +16,18 @@ form
         color: $podcast-black
         font-weight: bold
         margin-top: $global-margin-normal
+    input[type="radio"]
+        outline: none
+        border: none
     .radio-button-group
         display: flex
         flex-direction: column
         gap: 1em
         font-size: $paragraph-size-normal
-    .outer-progress-bar
-        border-radius: 20px
-        border: 1px solid $podcast-white
-        height: 20px
-        mat-progress-bar
-            width: 95%
-            margin-top: 8px
-            margin-left: auto
-            margin-right: auto
+    .outer-progress-box
+        padding: 5px
+        border: 2px solid $podcast-orange
+    mat-progress-bar
+        margin-left: auto
+        margin-right: auto
             

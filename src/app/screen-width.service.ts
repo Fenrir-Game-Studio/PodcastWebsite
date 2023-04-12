@@ -7,11 +7,11 @@ export class ScreenWidthService {
   private isLargeScreen: boolean;
 
   constructor() {
-    this.isLargeScreen = this.isGreaterThanThreshold('xs');
+    this.isLargeScreen = this.isGreaterThanThreshold('md');
   }
 
   isGreaterThanThreshold(breakpoint: string): boolean {
-    return window.innerWidth > BREAKPOINTS[breakpoint]
+    return window.innerWidth >= BREAKPOINTS[breakpoint]
   }
 
   getDeviceWidth(): number {

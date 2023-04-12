@@ -48,7 +48,6 @@ export class LandingPageComponent implements OnInit {
 
   openDialog() {
     const dialogRef = this.dialog.open(PollComponent, {
-      height: `50.75%`,
       width: `100%`,
     });
 
