@@ -11,7 +11,7 @@
                     <p>Every Monday, 15:00</p>
                 </div>
                 <div [@slideInVoteButton]="slideInState" class="middle-box">
-                    <button mat-raised-button color="primary">Make your voice heard with our polls</button>
+                    <button (click)="openDialog()" mat-raised-button color="primary">Make your voice heard with our polls</button>
                 </div>
                 <div class="right-box-bottom">
                     <app-social-link-button [title]="'Twitch'" [platform]="faTwitch"></app-social-link-button>

@@ -84,7 +84,5 @@ export class GalleryContainerComponentComponent implements OnInit {
     }else {
       this.numItemsToShow = 1
     }
-    console.log(this.numItemsToShow);
-
   }
 }
