@@ -13,6 +13,7 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MatListModule} from '@angular/material/list';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatTabsModule} from '@angular/material/tabs';
 
 // Components
 import { AppComponent } from './app.component';
@@ -64,7 +65,8 @@ import { FooterSmallComponent } from './footer-small/footer-small.component';
     MatMenuModule,
     MatListModule,
     MatDialogModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatTabsModule
   ],
   providers: [ScreenWidthService],
   bootstrap: [AppComponent]

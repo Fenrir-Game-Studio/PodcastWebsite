@@ -78,6 +78,10 @@ export class LandingPageComponent implements OnInit {
     this.snackbarToastsService.show('Please sign up or log in to vote in this poll.', 'Gotcha!')
   }
 
+  onPollSubmitted() {
+    this.scrollToSignup();
+  }
+
   ngOnInit(): void {
     setTimeout(() => {
       this.slideInContainer();
