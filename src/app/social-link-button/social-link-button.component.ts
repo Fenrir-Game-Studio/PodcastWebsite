@@ -19,6 +19,6 @@ export class SocialLinkButtonComponent {
   }
 
   ngOnInit() {
-    this.width = this.isDesktop ? 9 : 75;
+    this.width = this.isDesktop ? 8 : 75;
   }
 }

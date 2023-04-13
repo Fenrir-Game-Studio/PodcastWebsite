@@ -12,7 +12,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatListModule} from '@angular/material/list';
 import {MatDialogModule} from '@angular/material/dialog';
-
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 // Components
 import { AppComponent } from './app.component';
@@ -63,7 +63,8 @@ import { FooterSmallComponent } from './footer-small/footer-small.component';
     MatIconModule,
     MatMenuModule,
     MatListModule,
-    MatDialogModule
+    MatDialogModule,
+    MatSnackBarModule
   ],
   providers: [ScreenWidthService],
   bootstrap: [AppComponent]

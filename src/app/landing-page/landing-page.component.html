@@ -2,7 +2,7 @@
     <article id="hero-section">
         <section id="ad-copy">
             <div *ngIf="isLargeScreen" [@slideIn]="slideInState" class="left-box">
-                <app-poll></app-poll>
+                <app-poll (click)="scrollToSignup()"></app-poll>
             </div>
             <div class="right-box">
                 <div class="right-box-top">
@@ -86,7 +86,7 @@
     </section>
 </article>
 
-<article id="signup">
+<article id="signup" #signup>
     <section id="avatar-cta">
         <div id="avatar-container">
             <img src="./assets/image/avatar.png">

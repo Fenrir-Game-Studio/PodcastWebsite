@@ -1,4 +1,4 @@
-import { Component, HostBinding } from '@angular/core';
+import { Component, Optional } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
 import { faClock } from '@fortawesome/free-solid-svg-icons'
 
@@ -8,15 +8,22 @@ import { faClock } from '@fortawesome/free-solid-svg-icons'
   styleUrls: ['./poll.component.sass'],
 })
 
+
 export class PollComponent {
   faClock = faClock
+  dialogRef?: MatDialogRef<PollComponent>
   
-  constructor(private dialogRef: MatDialogRef<PollComponent>) {}
+  constructor(@Optional() dialogRef: MatDialogRef<PollComponent>) {
+    if (dialogRef) {
+      this.dialogRef = dialogRef
+    }
+  }
 
   onSubmit(event: SubmitEvent) {
     event.preventDefault();
-    console.log(event)
-    this.dialogRef.close()
+    if (this.dialogRef) {
+      this.dialogRef.close()
+    } 
   }
 }
 

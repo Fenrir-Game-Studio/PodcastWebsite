@@ -51,8 +51,8 @@ section
             flex-direction: row
             justify-content: flex-end
             align-items: flex-start
+            gap: $global-gap-normal
             .right-box
-                padding-top: $global-padding-normal
                 justify-content: flex-start
                 width: 50svw
             .right-box-top
@@ -63,6 +63,8 @@ section
                 justify-content: center
             .left-box
                 border-radius: 0 20px 20px 0
+            .left-box, .right-box
+                margin-top: $global-margin-normal
 #bar
     background-color: $podcast-orange
     width: 100svw

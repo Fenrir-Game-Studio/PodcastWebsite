@@ -1,10 +1,11 @@
-import { Component, ElementRef, OnInit, Renderer2 } from '@angular/core';
+import { Component, ElementRef, OnInit } from '@angular/core';
 import { faCaretDown, faCaretRight } from '@fortawesome/free-solid-svg-icons'
 import { faTwitch, faYoutube, faPatreon } from '@fortawesome/free-brands-svg-icons'
 import { trigger, state, style, animate, transition } from '@angular/animations'
 import { ScreenWidthService } from '../screen-width.service';
 import { MatDialog } from '@angular/material/dialog';
 import { PollComponent } from '../poll/poll.component';
+import { SnackbarToastsService } from '../snackbar-toasts.service';
 
 @Component({
   selector: 'app-landing-page',
@@ -53,7 +54,7 @@ export class LandingPageComponent implements OnInit {
   isLargeScreen: boolean = false;
 
   constructor(private screenWidthService: ScreenWidthService, private dialog: MatDialog,
-    private elementRef: ElementRef, private renderer: Renderer2) {
+    private elementRef: ElementRef, private snackbarToastsService: SnackbarToastsService) {
     this.isLargeScreen = this.screenWidthService.getIsLargeScreen();
   }
 
@@ -67,9 +68,14 @@ export class LandingPageComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
-      const signupElement = this.elementRef.nativeElement.querySelector('#signup');
-      signupElement.scrollIntoView({behavior: 'smooth'});
+      this.scrollToSignup();
     })
+  }
+
+  scrollToSignup() {
+    const signupElement = this.elementRef.nativeElement.querySelector('#signup');
+    signupElement.scrollIntoView({behavior: 'smooth'});
+    this.snackbarToastsService.show('Please sign up or log in to vote in this poll.', 'Gotcha!')
   }
 
   ngOnInit(): void {
