@@ -14,7 +14,8 @@ import {MatListModule} from '@angular/material/list';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatTabsModule} from '@angular/material/tabs';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import {MatChip, MatChipsModule} from '@angular/material/chips';
+import { HttpClientModule } from '@angular/common/http';
 
 // Components
 import { AppComponent } from './app.component';
@@ -33,6 +34,7 @@ import { NavbarSmallComponent } from './navbar-small/navbar-small.component';
 import { MyProfileComponent } from './my-profile/my-profile.component';
 import { ScreenWidthService } from './screen-width.service';
 import { FooterSmallComponent } from './footer-small/footer-small.component';
+import { BlogSearchBarComponent } from './blog-search-bar/blog-search-bar.component';
 
 
 @NgModule({
@@ -51,7 +53,8 @@ import { FooterSmallComponent } from './footer-small/footer-small.component';
     VideosComponent,
     NavbarSmallComponent,
     MyProfileComponent,
-    FooterSmallComponent
+    FooterSmallComponent,
+    BlogSearchBarComponent
   ],
   imports: [
     BrowserModule,
@@ -68,6 +71,7 @@ import { FooterSmallComponent } from './footer-small/footer-small.component';
     MatDialogModule,
     MatSnackBarModule,
     MatTabsModule,
+    MatChipsModule,
     HttpClientModule
   ],
   providers: [ScreenWidthService],

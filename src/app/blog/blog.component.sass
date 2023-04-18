@@ -3,6 +3,7 @@
 section
     @extend .app-container
     padding-top: $global-padding-normal
+    padding-bottom: $global-padding-normal
     background-color: $podcast-midnight
     color: $podcast-white
     font-family: $font-standard
@@ -10,17 +11,34 @@ section
     display: flex
     flex-direction: column
     gap: 1em
+    .blog-box-outer-element
+        .post-container
+            position: relative
+            .blog-box-inner-content-tags
+                display: flex
+                flex-direction: row
+                gap: $global-gap-tiny
+                position: absolute
+                top: 0
+                padding: $global-padding-tiny
+            .post-caption, .post-caption-xs
+                position: absolute
+                bottom: 0
+            .post-caption
+                @extend .blur-blog-label
+            .post-caption-xs
+                @extend .blur-blog-label-xs
+                text-align: center
     .blog-box-inner
         display: flex
         flex-direction: row
-        .blog-box-inner-content
-            display: flex
-            flex-direction: column
-            img
-                max-width: 150px
-        .blog-box-inner-content-tags
-            display: flex
-            flex-direction: row
-
-img
-    max-width: 80svw
+        flex-wrap: wrap
+        justify-content: space-between
+        gap: $global-gap-small
+        .blog-box-inner-content-element
+            flex-basis: calc(50% - 0.5em)
+            &.first-post
+                flex-basis: calc(100% - 1em)
+                flex-grow: 2
+    img
+        width: 100%

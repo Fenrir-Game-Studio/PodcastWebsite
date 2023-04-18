@@ -6,6 +6,7 @@ $podcast-midnight: #1C0D2B
 $podcast-white: #FEFEFD
 $podcast-indigo: #352264
 $podcast-blurcard: rgba(37, 35, 63, 0.8)
+$podcast-blurcard-dark: rgba(37,35,63, 0.9)
 
 // Universal spacing
 $normal-spacing: 1em
@@ -15,6 +16,7 @@ $small-spacing: $normal-spacing / 4
 $global-margin-normal: 2em
 $global-margin-small: $global-margin-normal / 2
 $global-padding-normal: 2em
+$global-padding-tiny: $global-padding-normal / 6
 $global-padding-big: $global-padding-normal* 1.33
 $global-gap-big: $global-padding-normal * 2
 $global-gap-normal: 2em
@@ -80,5 +82,14 @@ $xl: 1600px
     background-color: $podcast-blurcard
     padding: $global-padding-normal
     backdrop-filter: blur($filter-value-blur)
+.blur-blog-label
+    background-color: $podcast-blurcard-dark
+    padding: $global-padding-normal
+    backdrop-filter: blur($filter-value-blur)
+.blur-blog-label-xs
+    background-color: $podcast-blurcard-dark
+    width: 100%
+    backdrop-filter: blur($filter-value-blur)
+    padding: $global-padding-tiny 0 $global-padding-tiny 0
 .app-container
     padding: 0 10% 0 10%
