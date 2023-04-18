@@ -15,7 +15,11 @@ import {MatDialogModule} from '@angular/material/dialog';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatChip, MatChipsModule} from '@angular/material/chips';
+import {MatInputModule} from '@angular/material/input';
+import {MatDatepickerModule} from '@angular/material/datepicker';
 import { HttpClientModule } from '@angular/common/http';
+
+
 
 // Components
 import { AppComponent } from './app.component';
@@ -35,6 +39,7 @@ import { MyProfileComponent } from './my-profile/my-profile.component';
 import { ScreenWidthService } from './screen-width.service';
 import { FooterSmallComponent } from './footer-small/footer-small.component';
 import { BlogSearchBarComponent } from './blog-search-bar/blog-search-bar.component';
+import { MatNativeDateModule } from '@angular/material/core';
 
 
 @NgModule({
@@ -72,7 +77,10 @@ import { BlogSearchBarComponent } from './blog-search-bar/blog-search-bar.compon
     MatSnackBarModule,
     MatTabsModule,
     MatChipsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatInputModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
   providers: [ScreenWidthService],
   bootstrap: [AppComponent]

@@ -1,1 +1,55 @@
-<p>blog-search-bar works!</p>
+<div class="container">
+    <form (submit)="onSubmit($event)" class="search-box">
+        <mat-form-field>
+            <mat-label>What are you looking for?</mat-label>
+            <input matInput type="search" class="search-input">
+        </mat-form-field>
+    </form>
+    <div class="purple-box" (click)="onSearchPressed()" [@searchButtonPress]="buttonState">
+        <fa-icon [icon]="faSearch"></fa-icon>
+    </div>
+    <div class="black-box" (click)="onFilterPressed()" [@filterButtonPress]="filterButtonState">
+        <fa-icon [icon]="faFilter"></fa-icon>
+    </div>
+</div>
+<div *ngIf="showFilters" class="filter-box" [@entranceAnimation]>
+    <h3>Filters</h3>
+    <div class="date-box">
+        <mat-form-field>
+            <mat-label>From</mat-label>
+            <input matInput [matDatepicker]="startDate">
+            <!--<mat-hint>MM/DD/YYYY</mat-hint>-->
+            <mat-datepicker-toggle matIconSuffix [for]="startDate"></mat-datepicker-toggle>
+            <mat-datepicker #startDate></mat-datepicker>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>To</mat-label>
+            <input matInput [matDatepicker]="endDate">
+            <!--<mat-hint>MM/DD/YYYY</mat-hint>-->
+            <mat-datepicker-toggle matIconSuffix [for]="endDate"></mat-datepicker-toggle>
+            <mat-datepicker #endDate></mat-datepicker>
+        </mat-form-field>
+    </div>
+    <div class="tag-box">
+        <mat-form-field class="example-chip-list" appearance="fill">
+            <mat-label>Tags</mat-label>
+            <mat-chip-grid #chipGrid aria-label="Enter tags">
+              <mat-chip-row *ngFor="let tag of tags"
+                            (removed)="remove(tag)"
+                            [editable]="true"
+                            (edited)="edit(tag, $event)"
+                            [aria-description]="'press enter to edit ' + tag.name">
+                {{tag.name}}
+                <button matChipRemove [attr.aria-label]="'remove ' + tag.name">
+                  <mat-icon>cancel</mat-icon>
+                </button>
+              </mat-chip-row>
+              <input placeholder="New tag..."
+                     [matChipInputFor]="chipGrid"
+                     [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                     [matChipInputAddOnBlur]="addOnBlur"
+                     (matChipInputTokenEnd)="add($event)"/>
+            </mat-chip-grid>
+        </mat-form-field>
+    </div>
+</div>

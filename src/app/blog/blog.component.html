@@ -1,6 +1,6 @@
 <section>
     <div class="blog-box-outer">
-        <div class="blog-box-outer-element"><img src="./assets/image/dummy-search.png"></div>
+        <div class="blog-box-outer-element"><app-blog-search-bar></app-blog-search-bar></div>
         <div class="blog-box-outer-element">
             <div class="post-container">
                 <img src="./assets/image/controller.jpg">
@@ -12,20 +12,23 @@
                 <div class="post-caption">{{pinnedBlogPost.title}}</div>
             </div>
         </div>
-        <div class="blog-box-outer-element">
-            <div class="blog-box-inner">
-                <div *ngFor="let post of blogPosts; let i = index" class="blog-box-inner-content-element content-element-small {{ i === 0 ? 'first-post' : '' }}">
-                    <div class="post-container">
-                        <img src="./assets/image/gaming_placeholder.jpg">
-                        <div class="blog-box-inner-content-tags">
-                            <mat-chip-set *ngFor="let tag of post.tags">
-                                <mat-chip color="accent">{{tag}}</mat-chip>
-                            </mat-chip-set>
+        <article id="latest_blog_posts">
+            <div class="blog-box-outer-element">
+                <div class="blog-box-inner">
+                    <div *ngFor="let post of blogPosts; let i = index"
+                        class="blog-box-inner-content-element content-element-small {{ i === 0 ? 'first-post' : '' }}">
+                        <div class="post-container">
+                            <img [src]="post.thumbnail">
+                            <div class="blog-box-inner-content-tags">
+                                <mat-chip-set *ngFor="let tag of post.tags">
+                                    <mat-chip color="accent">{{tag}}</mat-chip>
+                                </mat-chip-set>
+                            </div>
+                            <div class="post-caption-xs">{{post.caption}}</div>
                         </div>
-                        <div class="post-caption-xs">{{post.caption}}</div>
                     </div>
                 </div>
             </div>
-        </div>
+        </article>
     </div>
 </section>
