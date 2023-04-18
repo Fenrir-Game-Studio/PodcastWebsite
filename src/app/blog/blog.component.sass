@@ -1,2 +1,26 @@
+@import 'src/assets/sass/variables'
+
 section
-    height: 1024px
+    @extend .app-container
+    padding-top: $global-padding-normal
+    background-color: $podcast-midnight
+    color: $podcast-white
+    font-family: $font-standard
+.blog-box-outer
+    display: flex
+    flex-direction: column
+    gap: 1em
+    .blog-box-inner
+        display: flex
+        flex-direction: row
+        .blog-box-inner-content
+            display: flex
+            flex-direction: column
+            img
+                max-width: 150px
+        .blog-box-inner-content-tags
+            display: flex
+            flex-direction: row
+
+img
+    max-width: 80svw

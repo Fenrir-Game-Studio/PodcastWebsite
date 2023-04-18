@@ -14,6 +14,7 @@ import {MatListModule} from '@angular/material/list';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatTabsModule} from '@angular/material/tabs';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 // Components
 import { AppComponent } from './app.component';
@@ -66,7 +67,8 @@ import { FooterSmallComponent } from './footer-small/footer-small.component';
     MatListModule,
     MatDialogModule,
     MatSnackBarModule,
-    MatTabsModule
+    MatTabsModule,
+    HttpClientModule
   ],
   providers: [ScreenWidthService],
   bootstrap: [AppComponent]

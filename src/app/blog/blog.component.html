@@ -1,3 +1,59 @@
 <section>
-    <p>blog works!</p>
+    <div class="blog-box-outer">
+        <div class="blog-box-outer-element"><img src="./assets/image/dummy-search.png"></div>
+        <div class="blog-box-outer-element">
+            <div class="post-container">
+                <img src="./assets/image/controller.jpg">
+                <div class="post-overlay">
+                    <div class="blog-box-inner-content-tags">
+                        <ng-container *ngFor="let tag of pinnedBlogPost.tags; let last = last">
+                            <p>{{tag}}</p>
+                            <span *ngIf="!last">&amp;</span>
+                        </ng-container>
+                    </div>
+                    <div class="post-caption">{{pinnedBlogPost.caption}}</div>
+                </div>
+            </div>
+        </div>
+        <div class="blog-box-outer-element">
+            <div class="blog-box-inner">
+                <div class="blog-box-inner-element">
+                    <div class="blog-box-inner-content">
+                        <div *ngFor="let post of blogPosts; let first = first" class="blog-box-inner-content-element">
+                            <div *ngIf="first" class="post-container">
+                                <img src="./assets/image/gaming_placeholder.jpg">
+                                <div class="post-overlay">
+                                    <div class="blog-box-inner-content-tags">
+                                        <ng-container *ngFor="let tag of post.tags; let last = last">
+                                            <p>{{tag}}</p>
+                                            <span *ngIf="!last">&amp;</span>
+                                        </ng-container>
+                                    </div>
+                                    <div class="post-caption">{{post.caption}}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="blog-box-inner-element">
+                    <div class="blog-box-inner-content">
+                        <div *ngFor="let post of blogPosts" class="blog-box-inner-content-element">
+                            <div clas="post-container">
+                                <img src="./assets/image/gaming_placeholder.jpg">
+                                <div class="post-overlay">
+                                    <div class="blog-box-inner-content-tags">
+                                        <ng-container *ngFor="let tag of post.tags; let last = last">
+                                            <p>{{tag}}</p>
+                                            <span *ngIf="!last">&amp;</span>
+                                        </ng-container>
+                                    </div>
+                                    <div class="post-caption">{{post.caption}}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
