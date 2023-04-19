@@ -23,8 +23,6 @@ export class BlogComponent {
   constructor(private http: HttpClient) {}
 
   ngOnInit() {
-    this.http.get('assets/dummy/dummy-blog.html', { responseType: 'text' }).subscribe(data => {
-      this.body = data;
-    });
+    
   }
 }
