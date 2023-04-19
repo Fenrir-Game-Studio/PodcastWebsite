@@ -9,7 +9,7 @@ import { HttpClient } from '@angular/common/http';
 export class BlogComponent {
 
   body = '';
-  pinnedBlogPost = { id: '#', createdAt: 'date', author: 'name',  title: 'Read this first. A glossary of game design terms', caption: 'Glossary', tags: ['Glossary', 'Learning'], body: this.body};
+  pinnedBlogPost = { id: '#', createdAt: 'date', author: 'name',  title: 'Read this first. A glossary of game design terms', caption: 'Glossary', tags: ['Glossary', 'Learning'], thumbnail: './assets/image/controller.jpg', body: this.body};
   blogPosts = [
     { id: '#', createdAt: 'date', author: 'name',  title: 'title abc', caption: 'short title', tags: ['Tag1', 'Tag2'], thumbnail: './assets/image/gaming_placeholder.jpg', body: this.body},
     { id: '#', createdAt: 'date', author: 'name',  title: 'title abc', caption: 'short title', tags: ['Tag1', 'Tag2'], thumbnail: './assets/image/mario_placeholder.jpg', body: this.body},

@@ -40,6 +40,7 @@ import { ScreenWidthService } from './screen-width.service';
 import { FooterSmallComponent } from './footer-small/footer-small.component';
 import { BlogSearchBarComponent } from './blog-search-bar/blog-search-bar.component';
 import { MatNativeDateModule } from '@angular/material/core';
+import { BlogPageComponent } from './blog-page/blog-page.component';
 
 
 @NgModule({
@@ -59,7 +60,8 @@ import { MatNativeDateModule } from '@angular/material/core';
     NavbarSmallComponent,
     MyProfileComponent,
     FooterSmallComponent,
-    BlogSearchBarComponent
+    BlogSearchBarComponent,
+    BlogPageComponent
   ],
   imports: [
     BrowserModule,
