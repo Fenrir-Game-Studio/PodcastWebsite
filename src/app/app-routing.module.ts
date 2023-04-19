@@ -7,7 +7,6 @@ import { BlogComponent } from './blog/blog.component';
 import { AboutComponent } from './about/about.component';
 import { VideosComponent } from './videos/videos.component';
 import { MyProfileComponent } from './my-profile/my-profile.component';
-import { BlogPageComponent } from './blog-page/blog-page.component';
 
 const routes: Routes = [
     { path: '', component: LandingPageComponent },
@@ -16,7 +15,7 @@ const routes: Routes = [
     { path: 'about', component: AboutComponent },
     { path: 'videos', component: VideosComponent },
     { path: 'myprofile', component: MyProfileComponent },
-    { path: 'blog-page', component: BlogPageComponent }
+
   ];
 
 @NgModule({
