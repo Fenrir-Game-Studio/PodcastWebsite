@@ -7,14 +7,8 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
   templateUrl: './blog-page.component.html',
   styleUrls: ['./blog-page.component.css']
 })
-export class BlogPageComponent implements OnInit {
-  body!: SafeHtml;
+export class BlogPageComponent {
 
-  constructor(private route: ActivatedRoute, private sanitizer: DomSanitizer) { }
+  constructor() { }
 
-  ngOnInit() {
-    this.route.queryParams.subscribe(params => {
-      this.body = this.sanitizer.bypassSecurityTrustHtml(params['body']);
-    });
-  }
 }
