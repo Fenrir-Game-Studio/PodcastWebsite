@@ -7,6 +7,9 @@ import {
   transition,
   // ...
 } from '@angular/animations';
+import { MatDialog } from '@angular/material/dialog';
+import { ContactFormComponent } from '../contact-form/contact-form.component';
+import { ContactFormSponsorComponent } from '../contact-form-sponsor/contact-form-sponsor.component';
 
 @Component({
   selector: 'app-contact',
@@ -27,11 +30,61 @@ import {
     ])
   ]
 })
-export class ContactComponent{
+export class ContactComponent {
   state1 = 'normal';
   state2 = 'normal';
   state3 = 'normal';
   state4 = 'normal';
+
+  constructor(private dialog: MatDialog) { }
+
+  openDialogTech() {
+    const dialogRef = this.dialog.open(ContactFormComponent, {
+      width: `50%`,
+      enterAnimationDuration: 600,
+      exitAnimationDuration: 600
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    })
+  }
+
+  openDialogSponsor() {
+    const dialogRef = this.dialog.open(ContactFormSponsorComponent, {
+      width: `50%`,
+      enterAnimationDuration: 600,
+      exitAnimationDuration: 600
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    })
+  }
+
+  openDialogFeedback() {
+    const dialogRef = this.dialog.open(ContactFormComponent, {
+      width: `50%`,
+      enterAnimationDuration: 600,
+      exitAnimationDuration: 600
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    })
+  }
+
+  openDialogCollab() {
+    const dialogRef = this.dialog.open(ContactFormComponent, {
+      width: `50%`,
+      enterAnimationDuration: 600,
+      exitAnimationDuration: 600
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    })
+  }
 
   onMouseEnter(imageNumber: number) {
     switch (imageNumber) {

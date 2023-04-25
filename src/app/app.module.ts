@@ -16,9 +16,11 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatChip, MatChipsModule} from '@angular/material/chips';
 import {MatInputModule} from '@angular/material/input';
+import {MatSelectModule} from '@angular/material/select';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatGridListModule} from '@angular/material/grid-list';
 import { HttpClientModule } from '@angular/common/http';
+import {MatCardModule} from '@angular/material/card';
 
 
 
@@ -42,6 +44,8 @@ import { FooterSmallComponent } from './footer-small/footer-small.component';
 import { BlogSearchBarComponent } from './blog-search-bar/blog-search-bar.component';
 import { MatNativeDateModule } from '@angular/material/core';
 import { BlogPageComponent } from './blog-page/blog-page.component';
+import { ContactFormComponent } from './contact-form/contact-form.component';
+import { ContactFormSponsorComponent } from './contact-form-sponsor/contact-form-sponsor.component';
 
 @NgModule({
   declarations: [
@@ -61,7 +65,9 @@ import { BlogPageComponent } from './blog-page/blog-page.component';
     MyProfileComponent,
     FooterSmallComponent,
     BlogSearchBarComponent,
-    BlogPageComponent
+    BlogPageComponent,
+    ContactFormComponent,
+    ContactFormSponsorComponent
   ],
   imports: [
     BrowserModule,
@@ -83,7 +89,9 @@ import { BlogPageComponent } from './blog-page/blog-page.component';
     MatInputModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    MatGridListModule
+    MatGridListModule,
+    MatSelectModule,
+    MatCardModule
   ],
   providers: [ScreenWidthService],
   bootstrap: [AppComponent]

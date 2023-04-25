@@ -1,0 +1,15 @@
+<mat-card>
+    <mat-form-field>
+        <mat-label>Topic</mat-label>
+        <mat-select>
+            <mat-option value="{{option.value}}" *ngFor="let option of options">{{option.value}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Describe your problem</mat-label>
+        <textarea matInput></textarea>
+    </mat-form-field>
+</mat-card>
+<div class="button-container">
+    <button mat-raised-button color="primary">Submit</button>
+</div>
