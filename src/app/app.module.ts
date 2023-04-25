@@ -17,6 +17,7 @@ import {MatTabsModule} from '@angular/material/tabs';
 import {MatChip, MatChipsModule} from '@angular/material/chips';
 import {MatInputModule} from '@angular/material/input';
 import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatGridListModule} from '@angular/material/grid-list';
 import { HttpClientModule } from '@angular/common/http';
 
 
@@ -81,7 +82,8 @@ import { BlogPageComponent } from './blog-page/blog-page.component';
     HttpClientModule,
     MatInputModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatGridListModule
   ],
   providers: [ScreenWidthService],
   bootstrap: [AppComponent]

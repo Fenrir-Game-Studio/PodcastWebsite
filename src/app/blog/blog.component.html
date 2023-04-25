@@ -1,38 +1,89 @@
 <section>
-    <div class="blog-box-outer">
-        <div class="blog-box-outer-element"><app-blog-search-bar></app-blog-search-bar></div>
+    <!-- Mobile -->
+    <div *ngIf="!isLargeScreen" class="blog-box-outer">
+        <!--<div class="blog-box-outer-element"><app-blog-search-bar></app-blog-search-bar></div>-->
         <div class="blog-box-outer-element">
-            <a routerLink="/blog-page">
+            <div class="blog-box-inner">
+                <app-blog-search-bar></app-blog-search-bar>
                 <div class="post-container">
-                    <img src="./assets/image/controller.jpg">
+                    <a routerLink="/blog-page"><img src="./assets/image/controller.jpg"></a>
                     <div class="blog-box-inner-content-tags">
                         <mat-chip-set *ngFor="let tag of pinnedBlogPost.tags">
                             <mat-chip color="accent">{{tag}}</mat-chip>
                         </mat-chip-set>
                     </div>
-                    <div class="post-caption">{{pinnedBlogPost.title}}</div>
+                    <a routerLink="/blog-page">
+                        <div class="post-caption">{{pinnedBlogPost.title}}</div>
+                    </a>
                 </div>
-            </a>
-        </div>
-        <article id="latest_blog_posts">
-            <div class="blog-box-outer-element">
-                <div class="blog-box-inner">
-                    <div *ngFor="let post of blogPosts; let i = index"
-                        class="blog-box-inner-content-element content-element-small {{ i === 0 ? 'first-post' : '' }}">
+                <div *ngFor="let post of blogPosts; let i = index"
+                    class="blog-box-inner-content-element {{ i === 0 ? 'newest-post' : '' }}">
+
+                    <div class="post-container">
+                        <a routerLink="/blog-page"><img [src]="post.thumbnail"></a>
+                        <div class="blog-box-inner-content-tags">
+                            <mat-chip-set *ngFor="let tag of post.tags">
+                                <mat-chip color="accent">{{tag}}</mat-chip>
+                            </mat-chip-set>
+                        </div>
                         <a routerLink="/blog-page">
-                            <div class="post-container">
-                                <img [src]="post.thumbnail">
-                                <div class="blog-box-inner-content-tags">
-                                    <mat-chip-set *ngFor="let tag of post.tags">
-                                        <mat-chip color="accent">{{tag}}</mat-chip>
-                                    </mat-chip-set>
-                                </div>
-                                <div class="post-caption-xs">{{post.caption}}</div>
-                            </div>
+                            <div class="post-caption-xs">{{post.caption}}</div>
                         </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- New -->
+    <div *ngIf="isLargeScreen" class="header">
+        <h1>Level Up Your Game Design Skills: Insights, Tips, and Techniques</h1>
+        <app-blog-search-bar></app-blog-search-bar>
+    </div>
+    <mat-grid-list *ngIf="isLargeScreen" cols="10" rowHeight="4:3">
+        <mat-grid-tile *ngFor="let tile of tiles; let i = index" [colspan]="tile.cols" [rowspan]="tile.rows">
+
+            <div *ngIf="i === 0" class="grid-tile-pinned tile">
+                <img routerLink="/blog-page" src="./assets/image/controller.jpg">
+                <p routerLink="/blog-page">{{pinnedBlogPost.title}}</p>
+                <mat-chip-set class="mat-chip-set">
+                    <mat-chip *ngFor="let tag of pinnedBlogPost.tags">{{tag}}</mat-chip>
+                </mat-chip-set>
+            </div>
+
+            <div *ngIf="i === 1" class="grid-tile-tall tall-upper">
+                <div *ngFor="let post of blogPosts | slice:0:3" class="grid-tile-tall-content tile">
+                    <img routerLink="/blog-page" [src]="post.thumbnail">
+                    <p routerLink="/blog-page">{{post.title}}</p>
+                    <mat-chip-set class="mat-chip-set">
+                        <mat-chip *ngFor="let tag of post.tags">{{tag}}</mat-chip>
+                    </mat-chip-set>
+                </div>
+            </div>
+
+            <div *ngIf="i === 2" class="grid-tile-tall tall-lower">
+                <div *ngFor="let post of blogPosts | slice:3:6" class="grid-tile-tall-content tile">
+                    <img routerLink="/blog-page" [src]="post.thumbnail">
+                    <p routerLink="/blog-page">{{post.title}}</p>
+                    <mat-chip-set class="mat-chip-set">
+                        <mat-chip *ngFor="let tag of post.tags">{{tag}}</mat-chip>
+                    </mat-chip-set>
+                </div>
+            </div>
+
+            <div *ngIf="i === 3" class="grid-tile-reg">
+                <div *ngFor="let post of blogPosts.slice(6)" class="grid-tile-reg-container">
+                    <div class="grid-tile-reg-content tile">
+                        <img routerLink="/blog-page" [src]="post.thumbnail">
+                        <p routerLink="/blog-page">{{post.caption}}</p>
+                        <mat-chip-set class="mat-chip-set">
+                            <mat-chip *ngFor="let tag of post.tags">{{tag}}</mat-chip>
+                        </mat-chip-set>
                     </div>
                 </div>
             </div>
-        </article>
-    </div>
+
+        </mat-grid-tile>
+    </mat-grid-list>
 </section>

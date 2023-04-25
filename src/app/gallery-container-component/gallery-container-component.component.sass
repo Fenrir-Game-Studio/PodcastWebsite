@@ -11,6 +11,7 @@
         font-weight: bold
         color: $podcast-black
         text-align: center
+        margin-bottom: $global-margin-small
     .row
         display: flex
         flex-direction: row
@@ -24,16 +25,14 @@
             color: $podcast-black
             text-align: center
         img
-            width: 203px
-            height: 135px
+            max-width: 250px
         .gallery-title
             font-weight: bold
             font-size: $title-font-size
     @include breakpoint('md')
         img
             display: block
-            width: 285px
-            height: 165px
+            width: 100%
             object-fit: cover
             object-position: center
 

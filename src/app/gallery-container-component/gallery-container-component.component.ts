@@ -39,15 +39,15 @@ export class GalleryContainerComponentComponent implements OnInit {
     { image: './assets/image/gaming_placeholder.jpg', title: 'Revive Couch Co-op!', date: 'January 18, 2023' },
     { image: './assets/image/gameover_placeholder.jpg', title: 'Elden Ring Sucks', date: 'January 11, 2023' },
     { image: './assets/image/mario_placeholder.jpg', title: 'The Nintendo Model', date: 'January 4, 2023' },
-    { image: './assets/image/mario_placeholder.jpg', title: 'The Nintendo Model', date: 'January 4, 2023' },
-    { image: './assets/image/gaming_placeholder.jpg', title: 'Revive Couch Co-op!', date: 'January 18, 2023' },
-    { image: './assets/image/gameover_placeholder.jpg', title: 'Elden Ring Sucks', date: 'January 11, 2023' },
-    { image: './assets/image/mario_placeholder.jpg', title: 'The Nintendo Model', date: 'January 4, 2023' },
-    { image: './assets/image/mario_placeholder.jpg', title: 'The Nintendo Model', date: 'January 4, 2023' },
-    { image: './assets/image/gaming_placeholder.jpg', title: 'Revive Couch Co-op!', date: 'January 18, 2023' },
-    { image: './assets/image/gameover_placeholder.jpg', title: 'Elden Ring Sucks', date: 'January 11, 2023' },
-    { image: './assets/image/mario_placeholder.jpg', title: 'The Nintendo Model', date: 'January 4, 2023' },
-    { image: './assets/image/mario_placeholder.jpg', title: 'The Nintendo Model', date: 'January 4, 2023' }
+    { image: './assets/image/super_mario_placeholder.jpg', title: 'The Nintendo Model', date: 'January 4, 2023' },
+    { image: './assets/image/vr_placeholder.jpg', title: 'Revive Couch Co-op!', date: 'January 18, 2023' },
+    { image: './assets/image/esport_placeholder.jpg', title: 'Elden Ring Sucks', date: 'January 11, 2023' },
+    { image: './assets/image/input_placeholder.jpg', title: 'The Nintendo Model', date: 'January 4, 2023' },
+    { image: './assets/image/learning_placeholder.jpg', title: 'The Nintendo Model', date: 'January 4, 2023' },
+    { image: './assets/image/metroid_placeholder.jpg', title: 'Revive Couch Co-op!', date: 'January 18, 2023' },
+    { image: './assets/image/retro_placeholder.jpg', title: 'Elden Ring Sucks', date: 'January 11, 2023' },
+    { image: './assets/image/gaming_placeholder.jpg', title: 'The Nintendo Model', date: 'January 4, 2023' },
+    { image: './assets/image/gameover_placeholder.jpg', title: 'The Nintendo Model', date: 'January 4, 2023' }
   ];
 
   constructor(private screenWidthService: ScreenWidthService) {
@@ -74,13 +74,13 @@ export class GalleryContainerComponentComponent implements OnInit {
     let deviceWidth = this.screenWidthService.getDeviceWidth();
 
     if(deviceWidth >= this.screenWidthService.getBreakpoint('xl')){
-      this.numItemsToShow = 4;
+      this.numItemsToShow = 5;
     }else if(deviceWidth >= this.screenWidthService.getBreakpoint('lg')){
-      this.numItemsToShow = 4;
-    }else if(deviceWidth >= this.screenWidthService.getBreakpoint('md')){
       this.numItemsToShow = 3;
-    }else if (deviceWidth >= this.screenWidthService.getBreakpoint('sm')) {
+    }else if(deviceWidth >= this.screenWidthService.getBreakpoint('md')){
       this.numItemsToShow = 2;
+    }else if (deviceWidth >= this.screenWidthService.getBreakpoint('sm')) {
+      this.numItemsToShow = 1;
     }else {
       this.numItemsToShow = 1
     }

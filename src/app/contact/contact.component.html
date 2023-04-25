@@ -1,3 +1,37 @@
 <section>
-    <p>contact works!</p>
+    <div class="container">
+        <div>
+            <h1>Hello, <span id="username">USERNAME!</span></h1>
+            <h3>How can we boost you today?</h3>
+        </div>
+        <div class="flexbox">
+            <div class="flexbox-item">
+                <div class="content">
+                    <img [@rotate]="state1" (mouseenter)="onMouseEnter(1)" (mouseleave)="onMouseLeave(1)"
+                        src="./assets/image/lego.jpg">
+                    <h2>It broke. Now what?</h2>
+                </div>
+            </div>
+            <div class="flexbox-item">
+                <div class="content">
+                    <img [@rotate]="state2" (mouseenter)="onMouseEnter(2)" (mouseleave)="onMouseLeave(2)"
+                        src="./assets/image/sponsor.jpg">
+                    <h2>Become a sponsor</h2>
+                </div>
+            </div>
+            <div class="flexbox-item">
+                <div class="content"><img [@rotate]="state3" (mouseenter)="onMouseEnter(3)"
+                        (mouseleave)="onMouseLeave(3)" src="./assets/image/feedback.jpg">
+                    <h2>Share your thoughts</h2>
+                </div>
+            </div>
+            <div class="flexbox-item">
+                <div class="content"><img [@rotate]="state4" (mouseenter)="onMouseEnter(4)"
+                        (mouseleave)="onMouseLeave(4)" src="./assets/image/talk.jpg">
+                    <h2>Wanna collaborate?</h2>
+                </div>
+
+            </div>
+        </div>
+    </div>
 </section>

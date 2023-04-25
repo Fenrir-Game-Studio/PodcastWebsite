@@ -9,10 +9,15 @@ section
     div, p, h1, a
         color: $podcast-white
     p
-        font-size: $paragraph-size-small
+        font-size: $paragraph-size-normal
     @include breakpoint('md')
         h1
             font-size: $header-size-big
+    .highlight-words
+        color: $podcast-orange
+        font-weight: bold
+    .emphasized
+        font-weight: bold
 
 #hero-section
     background-image: url(#{$filepath}Background_Hs2.png)
@@ -36,6 +41,10 @@ section
             justify-content: space-around
             height: 80svh
             width: 100svw
+        .right-box-top
+            text-align: center
+            @include breakpoint('md')
+                text-align: left
         .right-box-bottom
             @extend .app-container
             display: flex
@@ -67,7 +76,6 @@ section
                 margin-top: $global-margin-normal
 #bar
     background-color: $podcast-orange
-    width: 100svw
     height: 12svh
     overflow: hidden
 
@@ -113,9 +121,6 @@ section
             gap: 2em
             @include breakpoint('sm')
                 max-width: 30svw
-    .highlight-words
-        color: $podcast-orange
-        font-weight: bold
     .hidden-feature
         box-shadow: inset 100vw 0 0 0 $podcast-purple
     @include breakpoint('sm')
@@ -123,7 +128,7 @@ section
         #waterfall
             text-align: left
         .wf-outer-box
-            flex-direction: row
+            flex-direction: ro
         #waterfall, .wf-outer-box, .wfleft-box, .wf-right-box
             padding: $global-padding-normal
         .hidden-feature, .empty-hidden-feature

@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 import { faSearch, faFilter } from '@fortawesome/free-solid-svg-icons'
 import { trigger, state, style, animate, transition } from '@angular/animations';
 import {COMMA, ENTER} from '@angular/cdk/keycodes';
@@ -6,6 +6,7 @@ import { FormControl } from '@angular/forms';
 import { Observable, map, startWith } from 'rxjs';
 import { MatChipEditedEvent, MatChipInputEvent } from '@angular/material/chips';
 import {MatAutocompleteSelectedEvent} from '@angular/material/autocomplete';
+import { ScreenWidthService } from '../screen-width.service';
 
 export interface Tag {
   name: string;
@@ -36,13 +37,24 @@ export interface Tag {
     ]),
     trigger('entranceAnimation', [
       state('void', style({
-        transform: 'translateX(-150%)'
+        transform: 'translateX(-250%)'
       })),
       transition(':enter', [
         animate('0.5s ease-in-out', style({transform: 'translateX(0%)'}))
       ]),
       transition(':leave', [
-        animate('0.5s ease-in-out', style({transform: 'translateX(-150%)'}))
+        animate('0.5s ease-in-out', style({transform: 'translateX(-250%)'}))
+      ])
+    ]),
+    trigger('entranceAnimationRight', [
+      state('void', style({
+        transform: 'translateX(250%)'
+      })),
+      transition(':enter', [
+        animate('0.6s ease-in-out', style({transform: 'translateX(0%)'}))
+      ]),
+      transition(':leave', [
+        animate('0.6s ease-in-out', style({transform: 'translateX(250%)'}))
       ])
     ])
   ]
@@ -55,6 +67,8 @@ export class BlogSearchBarComponent {
   filterEntranceState = false
   showFilters = false
   tags: Tag[] = []
+  @Input() width!: number;
+  isDesktop: boolean = false
 
   addOnBlur = true;
   readonly separatorKeysCodes = [ENTER, COMMA] as const;

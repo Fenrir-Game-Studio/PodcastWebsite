@@ -7,9 +7,12 @@ section
     background-color: $podcast-midnight
     color: $podcast-white
     font-family: $font-standard
+
+// Mobile implementation
 .blog-box-outer
     display: flex
     flex-direction: column
+    align-items: center
     gap: 1em
     .blog-box-outer-element
         .post-container
@@ -26,6 +29,7 @@ section
                 bottom: 0
             .post-caption
                 @extend .blur-blog-label
+                text-align: center
             .post-caption-xs
                 @extend .blur-blog-label-xs
                 text-align: center
@@ -36,15 +40,61 @@ section
         justify-content: space-between
         gap: $global-gap-small
         .blog-box-inner-content-element
-            flex-basis: calc(50% - 0.5em)
-            &.first-post
-                flex-basis: calc(100% - 1em)
-                flex-grow: 2
+            flex-basis: calc(50% - $global-gap-small)
+            &.newest-post
+                flex-basis: calc(100% - $global-gap-small)
+                flex-grow: 1
     img
         width: 100%
-        min-height: 102px
-        height: 100%
-        object-fit: cover
+        height: auto
+        @include breakpoint('sm')
+            max-height: 600px
     a
         text-decoration: none
         color: $podcast-white
+
+// Grid tile implementation
+mat-chip-set
+    display: none
+    @include breakpoint('lg')
+        display: flex
+.grid-tile-pinned
+    display: flex
+    flex-direction: column
+    height: 100%
+.grid-tile-tall, .grid-tile-reg
+    display: flex
+    flex-direction: row
+    height: 100%
+.grid-tile-pinned, .grid-tile-tall-content, .grid-tile-reg
+    img
+        width: 100%
+        overflow: hidden
+.grid-tile-reg
+    flex-wrap: wrap
+    .grid-tile-reg-container
+        display: flex
+        flex-basis: calc(20%)
+.tile
+    display: flex
+    flex-direction: column
+    align-items: center
+    text-align: center
+    margin: $global-margin-small
+    @extend .blur-tile-label
+    &:hover
+        cursor: pointer
+    p
+        font-size: clamp(0.5rem, 1.5svw, 1rem)
+.header
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+    margin: $global-margin-small
+    app-blog-search-bar
+        display: block
+        width: 30svw
+    h1
+        margin: 0
+        @include breakpoint('xl')
+            margin: 0.87em
