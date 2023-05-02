@@ -1,6 +1,7 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { trigger, state, style, animate, transition } from '@angular/animations'
 import { ScreenWidthService } from '../screen-width.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-gallery-container-component',
@@ -50,7 +51,7 @@ export class GalleryContainerComponentComponent implements OnInit {
     { image: './assets/image/gameover_placeholder.jpg', title: 'The Nintendo Model', date: 'January 4, 2023' }
   ];
 
-  constructor(private screenWidthService: ScreenWidthService) {
+  constructor(private screenWidthService: ScreenWidthService, private router: Router) {
 
   }
   ngOnInit(): void {
@@ -59,14 +60,18 @@ export class GalleryContainerComponentComponent implements OnInit {
 
   expandContainer() {
     this.expanded = !this.expanded;
-    this.cta = this.expanded ? 'View Less' : 'View More';
+    this.cta = this.expanded ? 'View All' : 'View More';
 
     if (this.expanded) {
       this.numItemsToShow += 8;
     } else {
+      this.router.navigate(['/videos']);
+      window.scrollTo(0, 0);
+      /*
       setTimeout(() => {
         this.setNumItemsToShowFromThreshold()
       }, 500)
+      */
     }
   }
 

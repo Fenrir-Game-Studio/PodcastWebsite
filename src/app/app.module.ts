@@ -21,8 +21,7 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatGridListModule} from '@angular/material/grid-list';
 import { HttpClientModule } from '@angular/common/http';
 import {MatCardModule} from '@angular/material/card';
-
-
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 // Components
 import { AppComponent } from './app.component';
@@ -95,7 +94,8 @@ import { ContactFormCollabComponent } from './contact-form-collab/contact-form-c
     MatNativeDateModule,
     MatGridListModule,
     MatSelectModule,
-    MatCardModule
+    MatCardModule,
+    MatPaginatorModule
   ],
   providers: [ScreenWidthService],
   bootstrap: [AppComponent]

@@ -1,3 +1,17 @@
-<section>
-    <p>Videos work!</p>
-</section>
+<div class="container">
+    <h1>Videos</h1>
+    <div class="flexbox">
+        <div *ngFor="let g of galleryItems.slice(startIndex, endIndex)" class="element">
+            <div class="element-img">
+                <img src="{{g.image}}">
+            </div>
+            <div class="element-text">
+                <p class="title"><strong>{{g.title}}</strong></p>
+                <p class="date">{{g.date}}</p>
+            </div>
+        </div>
+        <mat-paginator class="element-bar" [length]="galleryItems.length" [pageSize]="pageSize"
+            [pageSizeOptions]="[12, 24, 36]" (page)="onPageChange($event)">
+        </mat-paginator>
+    </div>
+</div>

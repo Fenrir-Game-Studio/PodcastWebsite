@@ -1,2 +1,46 @@
-section
-    height: 1024px
+@import 'src/assets/sass/variables'
+.container
+    @extend .app-container
+    margin-top: $global-margin-normal
+    margin-bottom: $global-margin-normal
+    font-family: $font-standard
+.flexbox
+    display: flex
+    flex-direction: row
+    flex-wrap: wrap
+    gap: $global-gap-normal
+    justify-content: center
+.element
+    flex-basis: calc(100%)
+    background-color: $podcast-black
+    @include breakpoint('sm')
+        flex-basis: calc(50% - $global-gap-small)
+    @include breakpoint('lg')
+        flex-basis: calc(25% - $global-gap-normal)
+.element-img
+    overflow: hidden
+.element-text
+    margin: $global-margin-small
+    z-index: 2
+.title
+    color: $podcast-orange
+    text-transform: uppercase
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5)
+.date
+    color: $podcast-white
+    font-size: $paragraph-size-normal
+h1
+    text-align: center
+    color: $podcast-white
+a
+    text-decoration: none
+img
+    width: 100%
+    z-index: 1
+    transition: transform 0.3s ease-in-out
+    &:hover
+        transform: scale(1.1)
+.element-bar
+    flex-basis: 100%
+    @include breakpoint('lg')
+        flex-basis: calc(100% - $global-gap-large)
