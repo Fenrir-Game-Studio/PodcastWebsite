@@ -66,7 +66,10 @@ export class GalleryContainerComponentComponent implements OnInit {
       this.numItemsToShow += 8;
     } else {
       this.router.navigate(['/videos']);
-      window.scrollTo(0, 0);
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
       /*
       setTimeout(() => {
         this.setNumItemsToShowFromThreshold()
