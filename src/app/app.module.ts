@@ -47,6 +47,7 @@ import { ContactFormComponent } from './contact-form/contact-form.component';
 import { ContactFormSponsorComponent } from './contact-form-sponsor/contact-form-sponsor.component';
 import { ContactFormFeedbackComponent } from './contact-form-feedback/contact-form-feedback.component';
 import { ContactFormCollabComponent } from './contact-form-collab/contact-form-collab.component';
+import { SegmentedStatBarComponent } from './segmented-stat-bar/segmented-stat-bar.component';
 
 @NgModule({
   declarations: [
@@ -70,7 +71,8 @@ import { ContactFormCollabComponent } from './contact-form-collab/contact-form-c
     ContactFormComponent,
     ContactFormSponsorComponent,
     ContactFormFeedbackComponent,
-    ContactFormCollabComponent
+    ContactFormCollabComponent,
+    SegmentedStatBarComponent
   ],
   imports: [
     BrowserModule,

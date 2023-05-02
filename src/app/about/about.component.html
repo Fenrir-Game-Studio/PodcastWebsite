@@ -1,3 +1,93 @@
-<section>
-    <p>about works!</p>
-</section>
+<div class="container">
+    <div class="flexbox-row">
+        <div class="flexbox-column" [ngClass]="{
+            'img-light-translucent': selectedCharacter === this.light && !isLargeScreen,
+            'img-dmj-translucent': selectedCharacter === this.dmj && !isLargeScreen,
+            'img-paladin-translucent': selectedCharacter === this.paladin && !isLargeScreen
+        }">
+            <div class="column-element">
+                <h1><strong>Name:</strong> {{selectedCharacter.cName}}</h1>
+            </div>
+            <div class="column-element">
+                <h1><strong>Origin:</strong> {{selectedCharacter.origin}}</h1>
+            </div>
+            <div class="column-element">
+                <div class="flexbox-class-row">
+                    <!--
+                    <p class="highlight">{{selectedCharacter.jobs[0].title}}</p>
+                    <p class="highlight">{{selectedCharacter.jobs[1].title}}</p>
+                    <p class="highlight">{{selectedCharacter.jobs[2].title}}</p>
+                    -->
+                    <mat-chip-set>
+                        <mat-chip>{{selectedCharacter.jobs[0].title}}</mat-chip>
+                        <mat-chip>{{selectedCharacter.jobs[1].title}}</mat-chip>
+                        <mat-chip>{{selectedCharacter.jobs[2].title}}</mat-chip>
+                    </mat-chip-set>
+                </div>
+            </div>
+            <div class="column-element">
+                <p><strong>Background:</strong> {{selectedCharacter.background}}</p>
+            </div>
+            <div class="column-element">
+                <div class="flexbox-stat-row">
+                    <p>{{selectedCharacter.stats[0].sName}}</p>
+                    <app-segmented-stat-bar [numberFilled]="selectedCharacter.stats[0].value"></app-segmented-stat-bar>
+                </div>
+            </div>
+            <div class="column-element">
+                <div class="flexbox-stat-row">
+                    <p>{{selectedCharacter.stats[1].sName}}</p>
+                    <app-segmented-stat-bar [numberFilled]="selectedCharacter.stats[1].value"></app-segmented-stat-bar>
+                </div>
+            </div>
+            <div class="column-element">
+                <div class="flexbox-stat-row">
+                    <p>{{selectedCharacter.stats[2].sName}}</p>
+                    <app-segmented-stat-bar [numberFilled]="selectedCharacter.stats[2].value"></app-segmented-stat-bar>
+                </div>
+            </div>
+            <div class="column-element">
+                <div class="flexbox-stat-row">
+                    <p>{{selectedCharacter.stats[3].sName}}</p>
+                    <app-segmented-stat-bar [numberFilled]="selectedCharacter.stats[3].value"></app-segmented-stat-bar>
+                </div>
+            </div>
+            <div class="column-element">
+                <div class="flexbox-stat-row">
+                    <p>{{selectedCharacter.stats[4].sName}}</p>
+                    <app-segmented-stat-bar [numberFilled]="selectedCharacter.stats[4].value"></app-segmented-stat-bar>
+                </div>
+            </div>
+            <div class="column-element">
+                <div class="flexbox-stat-row">
+                    <p>{{selectedCharacter.stats[5].sName}}</p>
+                    <app-segmented-stat-bar [numberFilled]="selectedCharacter.stats[5].value"></app-segmented-stat-bar>
+                </div>
+            </div>
+            <div class="column-element"></div>
+            <div class="column-element">
+                <p><span class="highlight">{{selectedCharacter.email}}</span></p>
+            </div>
+        </div>
+        <div class="flexbox-img" [ngClass]="{
+            'img-light': selectedCharacter === this.light,
+            'img-dmj': selectedCharacter === this.dmj,
+            'img-paladin': selectedCharacter === this.paladin
+        }">
+        </div>
+    </div>
+</div>
+<div class="flexbox-row-4">
+    <div class="row-lg">
+        <h1>Choose Your <br>Fighter!</h1>
+    </div>
+    <div class="row-sm">
+        <a (click)="changeCharacter(0)"><img class="hover14" src="./assets/image/light2.png"></a>
+    </div>
+    <div class="row-sm">
+        <a (click)="changeCharacter(1)"><img class="hover14" src="./assets/image/dmj2.png"></a>
+    </div>
+    <div class="row-sm">
+        <a (click)="changeCharacter(2)"><img class="hover14" src="./assets/image/paladin.png"></a>
+    </div>
+</div>
