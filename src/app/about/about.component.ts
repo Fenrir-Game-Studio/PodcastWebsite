@@ -80,5 +80,6 @@ export class AboutComponent {
         this.selectedCharacter = this.light;
         break;
     }
+    window.scrollTo(0, 0);
   }
 }

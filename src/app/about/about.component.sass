@@ -27,12 +27,15 @@
     display: flex
     flex-direction: row
     justify-content: center
-    gap: $global-gap-normal
     align-items: center
     min-height: 30svh
     flex-wrap: wrap
     background: linear-gradient(to right, #ffa731, #761FF8)
-    
+    gap: $global-gap-small
+    padding-bottom: $global-margin-normal
+    @include breakpoint('sm')
+        padding-bottom: 0
+        gap: $global-gap-normal
     h1
         text-align: center
         text-transform: uppercase
@@ -48,9 +51,12 @@
     transform: skewX(-10deg)
     max-height: 25svh
     overflow: hidden
+    flex-basis: calc(33% - $global-padding-normal)
     img
         max-height: 25svh
         transition: transform 0.25s ease-in-out
+        object-fit: scale-down
+        object-position: center
         &:hover
             transform: scale(1.1)
             
