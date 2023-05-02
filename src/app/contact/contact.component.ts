@@ -10,6 +10,8 @@ import {
 import { MatDialog } from '@angular/material/dialog';
 import { ContactFormComponent } from '../contact-form/contact-form.component';
 import { ContactFormSponsorComponent } from '../contact-form-sponsor/contact-form-sponsor.component';
+import { ContactFormFeedbackComponent } from '../contact-form-feedback/contact-form-feedback.component';
+import { ContactFormCollabComponent } from '../contact-form-collab/contact-form-collab.component';
 
 @Component({
   selector: 'app-contact',
@@ -63,7 +65,7 @@ export class ContactComponent {
   }
 
   openDialogFeedback() {
-    const dialogRef = this.dialog.open(ContactFormComponent, {
+    const dialogRef = this.dialog.open(ContactFormFeedbackComponent, {
       width: `50%`,
       enterAnimationDuration: 600,
       exitAnimationDuration: 600
@@ -75,7 +77,7 @@ export class ContactComponent {
   }
 
   openDialogCollab() {
-    const dialogRef = this.dialog.open(ContactFormComponent, {
+    const dialogRef = this.dialog.open(ContactFormCollabComponent, {
       width: `50%`,
       enterAnimationDuration: 600,
       exitAnimationDuration: 600
