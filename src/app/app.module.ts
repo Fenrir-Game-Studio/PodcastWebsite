@@ -49,6 +49,7 @@ import { ContactFormFeedbackComponent } from './contact-form-feedback/contact-fo
 import { ContactFormCollabComponent } from './contact-form-collab/contact-form-collab.component';
 import { SegmentedStatBarComponent } from './segmented-stat-bar/segmented-stat-bar.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -74,7 +75,8 @@ import { SignUpComponent } from './sign-up/sign-up.component';
     ContactFormFeedbackComponent,
     ContactFormCollabComponent,
     SegmentedStatBarComponent,
-    SignUpComponent
+    SignUpComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

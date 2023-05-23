@@ -31,10 +31,10 @@
                 <mat-menu #signinMenu="matMenu" xPosition="before">
                     <mat-list>
                         <mat-list-item>
-                            <button (click)="isLoggedIn = true" mat-menu-item>Login</button>
+                            <button (click)="openLoginDialog()" mat-menu-item>Login</button>
                         </mat-list-item>
                         <mat-list-item>
-                            <button routerLink="/" mat-menu-item>Signup</button>
+                            <button (click)="openSignupDialog()" mat-menu-item>Signup</button>
                         </mat-list-item>
                     </mat-list>
                 </mat-menu>

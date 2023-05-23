@@ -17,6 +17,7 @@ const routes: Routes = [
     { path: 'videos', component: VideosComponent },
     { path: 'myprofile', component: MyProfileComponent },
     { path: 'blog-page', component: BlogPageComponent },
+    { path: 'sign-up', component: BlogPageComponent }
   ];
 
 @NgModule({
