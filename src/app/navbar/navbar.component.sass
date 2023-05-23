@@ -3,6 +3,10 @@ $hover: darken($podcast-black, 10%)
 nav
     background: $podcast-black
     font-family: $font-standard
+    position: fixed
+    top: 0
+    width: 100%
+    z-index: 999
     .container
         @extend .app-container
         display: flex
@@ -10,6 +14,7 @@ nav
         justify-content: space-between
         align-items: center
         list-style: none
+        height: $navbar-height
     #navbar-items
         display: flex
         flex-direction: row
@@ -36,3 +41,7 @@ nav
     .active
         font-weight: bold
         color: $podcast-orange
+#logo-container
+    display: flex
+    flex-direction: row
+    align-items: center

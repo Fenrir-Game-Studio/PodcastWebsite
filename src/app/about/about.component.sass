@@ -1,5 +1,11 @@
 @import 'src/assets/sass/variables'
-
+h1
+    font-size: $header-size-small
+    @include breakpoint('sm')
+        font-size: $header-size-normal
+a
+    &:hover
+        cursor: pointer
 .container
     @extend .app-container
     color: $podcast-white
@@ -25,17 +31,17 @@
         justify-content: space-between
 .flexbox-row-4
     display: flex
-    flex-direction: row
-    justify-content: center
+    flex-direction: column
     align-items: center
-    min-height: 30svh
-    flex-wrap: wrap
     background: linear-gradient(to right, #ffa731, #761FF8)
-    gap: $global-gap-small
+    gap: $global-gap-normal
     padding-bottom: $global-margin-normal
     @include breakpoint('sm')
+        flex-direction: row
+        justify-content: space-evenly
+        align-content: center
+        min-height: 30svh
         padding-bottom: 0
-        gap: $global-gap-normal
     h1
         text-align: center
         text-transform: uppercase
@@ -47,20 +53,19 @@
     @include breakpoint('md')
         flex-basis: 25%
 .row-sm
-    border: 4px solid $podcast-orange
-    transform: skewX(-10deg)
     max-height: 25svh
-    overflow: hidden
-    flex-basis: calc(33% - $global-padding-normal)
+    @include breakpoint('md')
+        transform: skewX(-10deg)
     img
         max-height: 25svh
         transition: transform 0.25s ease-in-out
         object-fit: scale-down
         object-position: center
+        border: 4px solid $podcast-orange
+
         &:hover
             transform: scale(1.1)
-            
-            
+
 .highlight
     color: $podcast-orange
 .flexbox-img
@@ -88,10 +93,4 @@
     background-position: center
     @include breakpoint('sm')
         background-size: contain
-h1
-    font-size: $header-size-small
-    @include breakpoint('sm')
-        font-size: $header-size-normal
-a
-    &:hover
-        cursor: pointer
+    
