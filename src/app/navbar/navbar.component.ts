@@ -17,4 +17,11 @@ export class NavbarComponent {
   navigateTo(route: string) {
     this.router.navigate([route]);
   }
+
+  scrollUp() {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  }
 }

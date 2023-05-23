@@ -52,9 +52,9 @@ section
             align-items: center
             gap: $global-gap-small
         .middle-box
-                display: flex
-                flex-direction: row
-                justify-content: center
+            display: flex
+            flex-direction: row
+            justify-content: center
         @include breakpoint('md')
             display: flex
             flex-direction: row
@@ -88,8 +88,8 @@ section
         position: absolute
         bottom: 0
         fa-icon
-            font-size: 6em
-            color: $podcast-black
+        font-size: 6em
+        color: $podcast-black
 #latest-content, #about
     @extend .app-container
     background-color: $podcast-black
@@ -141,11 +141,11 @@ section
             -webkit-transition: ease-out 0.6s
             -moz-transition: ease-out 0.6s
             transition: ease-out 0.6s
-        .hidden-feature
+        .wf-content
             &:hover
-                color: $podcast-white
-                box-shadow: inset 100vw 0 0 0 $podcast-purple
-
+                .hidden-feature
+                    color: $podcast-white
+                    box-shadow: inset 100vw 0 0 0 $podcast-purple
 #signup
     @extend .app-container
     background-color: $podcast-indigo

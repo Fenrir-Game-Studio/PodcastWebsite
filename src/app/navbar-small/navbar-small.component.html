@@ -1,7 +1,7 @@
 <nav id="main-nav">
     <div class="container">
         <div id="logo-container">
-            <a href=""><img routerLink="/" id="logo" src="assets/image/EXP_Boost_logo.png"></a>
+            <img routerLink="/" (click)="scrollUp()" id="logo" src="assets/image/EXP_Boost_logo.png">
         </div>
         <div id="menu-container">
             <fa-icon [icon]="faBars" [matMenuTriggerFor]="rootMenu"></fa-icon>
