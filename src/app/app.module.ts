@@ -39,7 +39,6 @@ import { VideosComponent } from './videos/videos.component';
 import { NavbarSmallComponent } from './navbar-small/navbar-small.component';
 import { MyProfileComponent } from './my-profile/my-profile.component';
 import { ScreenWidthService } from './screen-width.service';
-import { FooterSmallComponent } from './footer-small/footer-small.component';
 import { BlogSearchBarComponent } from './blog-search-bar/blog-search-bar.component';
 import { MatNativeDateModule } from '@angular/material/core';
 import { BlogPageComponent } from './blog-page/blog-page.component';
@@ -67,7 +66,6 @@ import { LoginComponent } from './login/login.component';
     VideosComponent,
     NavbarSmallComponent,
     MyProfileComponent,
-    FooterSmallComponent,
     BlogSearchBarComponent,
     BlogPageComponent,
     ContactFormComponent,
