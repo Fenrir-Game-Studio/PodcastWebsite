@@ -4,26 +4,6 @@ footer
     padding-top: $global-padding-normal
     padding-bottom: $global-padding-normal
     @extend .app-container
-.flexbox
-    display: flex
-    flex-direction: column
-    gap: $global-gap-small
-    @include breakpoint('md')
-        flex-direction: row
-        gap: $global-gap-normal
-        justify-content: space-evenly
-.flexbox-item
-    display: flex
-    flex-direction: column
-    gap: $global-gap-small
-.flexbox-logo
-    max-width: $footer-image-size
-.flexbox-subrow
-    display: flex
-    flex-direction: row
-    gap: $global-gap-small
-.center-text
-    text-align: center
 h1, p, fa-icon, a
     font-family: $font-standard
     color: $podcast-white
@@ -45,3 +25,25 @@ fa-icon, a
         color: $podcast-orange
         text-decoration: underline
 
+.flexbox
+    display: flex
+    flex-direction: column
+    gap: $global-gap-small
+    @include breakpoint('md')
+        flex-direction: row
+        gap: $global-gap-normal
+        justify-content: space-evenly
+.flexbox-item
+    display: flex
+    flex-direction: column
+    gap: $global-gap-small
+.flexbox-logo
+    max-width: $footer-image-size
+.flexbox-subrow
+    display: flex
+    flex-direction: row
+    gap: $global-gap-small
+.center-text
+    text-align: center
+.contact-form-btn
+    max-width: 190px
