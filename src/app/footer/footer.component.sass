@@ -1,42 +1,47 @@
 @import 'src/assets/sass/variables'
-article
+footer
+    background-color: $podcast-black
+    padding-top: $global-padding-normal
+    padding-bottom: $global-padding-normal
     @extend .app-container
-    display: flex
-    flex-direction: row
-    justify-content: space-between
-    background: $podcast-black
-    color: $podcast-white
-    font-family: 'Montserrat', sans-serif
-    overflow-x: hidden
-section
+.flexbox
     display: flex
     flex-direction: column
-    padding: $global-padding-normal
-    flex-basis: 0
-    flex-grow: 1
-    fa-icon, p
-        color: $podcast-white
-        margin: 0
-        line-height: 2.5svh
-    img
-        height: 130px
-    li
-        list-style-type: none
-    header
-        font-size: $header-size-small
-        font-weight: bold
-    p
-        font-size: $paragraph-size-small
-        white-space: nowrap
-    #logo-copyright
-        p
-            text-align: center
-ul
-    margin: 0
-    padding: 0
-.social-buttons-container, .social-links-container
+    gap: $global-gap-small
+    @include breakpoint('md')
+        flex-direction: row
+        gap: $global-gap-normal
+        justify-content: space-evenly
+.flexbox-item
+    display: flex
+    flex-direction: column
+    gap: $global-gap-small
+.flexbox-logo
+    max-width: $footer-image-size
+.flexbox-subrow
     display: flex
     flex-direction: row
-    justify-content: flex-start
-    flex-wrap: wrap
-    gap: $global-gap-tiny
+    gap: $global-gap-small
+.center-text
+    text-align: center
+h1, p, fa-icon, a
+    font-family: $font-standard
+    color: $podcast-white
+h1
+    font-size: $header-size-tiny
+a
+    text-decoration: none
+ul
+    list-style: none
+    margin: 0
+    padding: 0
+li
+    margin-bottom: $global-margin-tiny
+p
+    margin: 0
+fa-icon, a
+    &:hover
+        cursor: pointer
+        color: $podcast-orange
+        text-decoration: underline
+

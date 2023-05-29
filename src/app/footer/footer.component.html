@@ -1,48 +1,45 @@
-<article id="footer-root">
-    <section id="logo-copyright">
-        <div class="image-container">
-            <img src="assets/image/EXP_Boost_logo.png">
+<footer>
+    <div class="flexbox">
+        <div class="flexbox-item">
+            <h1>Schedule</h1>
+            <p>Mondays, 15 CET</p>
         </div>
-        <p>© EXPBoost. All rights reserved.</p>
-    </section>
-    <section id="schedule-socials">
-        <header>Stream</header>
-        <p>Mondays, 15 CET.</p>
-        <div class="social-buttons-container">
-            <app-social-link-button [title]="'Twitch'" [platform]="faTwitch"></app-social-link-button>
-            <app-social-link-button [title]="'YouTube'" [platform]="faYoutube"></app-social-link-button>
+        <div class="flexbox-item">
+            <h1>Popular links</h1>
+            <ul>
+                <li><a routerLink="/videos">Episodes</a></li>
+                <li><a routerLink="/blog">Blog posts</a></li>
+                <li><a routerLink="/">Gaming dictionary</a></li>
+                <li><a routerLink="/">Terms of service</a></li>
+                <li><a routerLink="/">F.A.Q</a></li>
+                <li><a routerLink="/contact">Support</a></li>
+            </ul>
         </div>
-    </section>
-    <section id="contact">
-        <header>Contact</header>
-        <p>light@fenrirgamestudio.com</p>
-        <p>dmj@fenrirgamestudio.com</p>
-        <p>paladin@fenrirgamestudio.com</p>
-    </section>
-    <section id="support">
-        <header>Support</header>
-        <ul class="social-links-container">
-            <a href="https://twitch.tv">
-                <li><fa-icon [icon]="faTwitch"></fa-icon></li>
-            </a>
-            <a href="https://youtube.com">
-                <li><fa-icon [icon]="faYoutube"></fa-icon></li>
-            </a>
-            <a href="https://patreon.com">
-                <li><fa-icon [icon]="faPatreon"></fa-icon></li>
-            </a>
-            <a href="https://linkedin.com">
-                <li><fa-icon [icon]="faLinkedIn"></fa-icon></li>
-            </a>
-            <a href="https://discord.com">
-                <li><fa-icon [icon]="faDiscord"></fa-icon></li>
-            </a>
-            <a href="https://reddit.com">
-                <li><fa-icon [icon]="faReddit"></fa-icon></li>
-            </a>
-            <a href="https://tiktok.com">
-                <li><fa-icon [icon]="faTiktok"></fa-icon></li>
-            </a>
-        </ul>
-    </section>
-</article>
+        <div class="flexbox-item">
+            <h1>Contact</h1>
+            <p>contact@expboost.com</p>
+            <p>Alternatively</p>
+            <button (click)="navigateToContact()" mat-raised-button color="primary">Contact Form</button>
+        </div>
+        <div class="flexbox-item">
+            <h1>Find us on</h1>
+            <div class="flexbox-subrow">
+                <fa-icon [icon]="faYoutube"></fa-icon>
+                <fa-icon [icon]="faTwitch"></fa-icon>
+                <fa-icon [icon]="faPatreon"></fa-icon>
+                <fa-icon [icon]="faDiscord"></fa-icon>
+                <fa-icon [icon]="faTiktok"></fa-icon>
+                <fa-icon [icon]="faReddit"></fa-icon>
+                <fa-icon [icon]="faLinkedIn"></fa-icon>
+            </div>
+        </div>
+        <div class="flexbox-item">
+            <h1>Join the party &<br> Boost your gaming insights!</h1>
+            <div class="flexbox-subrow">
+                <button (click)="redirectToTwitchChannel()" mat-raised-button color="primary">Join on Twitch</button>
+                <button (click)="openDialog()" mat-raised-button color="primary">Join the community</button>
+            </div>
+            <p>© ExpBoost. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
